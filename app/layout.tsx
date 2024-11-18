@@ -14,8 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Balex - Personal Balance Expense Manager",
-  description: "Know who you are. Track your expenses. Track what subscriptions subscribed, daily, monthly, yearly income and outcome, etc...",
+  // title: "Balex | Personal Balance Expense Manager",
+  title: "Balex | ",
+  description: "Know who you are. Track your expenses | Track daily, monthly, yearly income and outcome, what subscriptions subscribed, etc...",
 };
 
 export default function RootLayout({
