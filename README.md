@@ -1,5 +1,7 @@
 # balex
 
+* Sun Nov 24, 2024
+  * (11.24.01) - Created `landing-pages` folder.
 * Sat Nov 23, 2024
   * (11.23.01) - Created `frontend`, `backend`, and `resources` folders. Initialized frontend and backend codebases.
 * Mon Nov 18, 2024
