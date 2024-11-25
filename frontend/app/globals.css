@@ -15,10 +15,10 @@
   }
 
   .icon {
-    @apply text-lg text-dark p-3 rounded hover:cursor-pointer hover:bg-hover-blue;
+    @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer hover:bg-hover-color;
   }
 
   .active {
-    @apply text-secondary-primary
+    @apply text-secondary-color;
   }
 }

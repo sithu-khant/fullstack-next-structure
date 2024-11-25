@@ -11,15 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        page: "#F4F5F7",
-        primary: "#0061F2",
-        "secondary-primary": "#0056D6",
-        "hover-blue": "#E2F1FF",
-        dark: "#2A2F3B",
-        "accent-green": "#48C78E",
-        "alert-color": "#F23A55",
-        "text": "#333333",
-        "soft-gray": "#A0A9B3"
+
+        "primary-color": "#0061F2", // Blue
+        "secondary-color": "#0056D6", // Soft Blue
+        "background-color": "#F4F5F7", // Light Gray
+        "dark-background": "2A2F3B", // Charcoal
+        "accent-color": "#48C78E", // Light Green
+        "alert-color": "#F23A55", // Warm Red
+        "text-color": "#333333", // Dark Gray
+        "muted-gray": "#A0A9B3", // Soft Gray
+        "input-field-background": "#E5E7EB", // Light Grayish White
+        "hover-color": "#E2F1FF", // Subtle Blue
       },
     },
   },
