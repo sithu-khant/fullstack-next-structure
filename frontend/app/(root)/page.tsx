@@ -1,8 +1,20 @@
+import CategorySidebar from '@/components/shared/CategorySidebar';
+import IconSidebar from '@/components/shared/IconSidebar';
+import Item from '@/components/shared/Item';
+import ItemsSidebar from '@/components/shared/ItemsSidebar';
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
     <>
-      <h1>Hello</h1>
+      <div className='flex gap-2'>
+        <IconSidebar />
+        <CategorySidebar />
+        <ItemsSidebar />
+        <Item />
+      </div>
     </>
   )
-};
+}
+
+export default page;

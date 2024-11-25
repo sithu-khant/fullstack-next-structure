@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import 'primeicons/primeicons.css';
 
 const geistSans = Inter({
   subsets: ["latin"],
@@ -8,7 +9,7 @@ const geistSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dashboard | Balex"
+  title: "Balex"
 };
 
 export default function RootLayout({

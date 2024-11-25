@@ -2,6 +2,7 @@
 
 * Mon Nov 25, 2024
   * (11.25.01) - Made `Inter` font as default font family. 
+  * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.
 * Sun Nov 24, 2024
   * (11.24.01) - Created `landing-pages` folder.
 * Sat Nov 23, 2024
