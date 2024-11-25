@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+
+import 'primereact/resources/themes/mdc-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 const geistSans = Inter({

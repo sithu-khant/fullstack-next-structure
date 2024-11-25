@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+/* Tootip bacground color */
+.p-tooltip-text	{
+  background-color: red !important;
+}
+
 @layer components {
   .icons-div {
     @apply flex flex-col items-center;
