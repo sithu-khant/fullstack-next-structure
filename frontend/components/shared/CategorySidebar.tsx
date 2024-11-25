@@ -9,22 +9,25 @@ const CategorySidebar = () => {
   const menu: any = useRef(null);
   const items = [
     {
-      label: 'File',
-      icon: 'pi pi-file',
-      url: "/dashboard"
+      label: 'Sort',
+      icon: 'pi pi-sort',
+      items: [
+        {
+          label: 'Styled',
+          url: '/theming'
+        },
+        {
+          label: 'Unstyled',
+          url: '/unstyled'
+        }
+      ]
     },
     {
-      label: 'Search',
-      icon: 'pi pi-search',
+      label: 'Table View',
+      icon: 'pi pi-table',
       command: () => {
         console.log("Hello");
       }
-    },
-    {
-      label: 'Share',
-      icon: 'pi pi-share-alt',
-      url: "/dashboard"
-
     }
   ];
 

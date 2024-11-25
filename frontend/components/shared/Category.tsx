@@ -1,6 +1,41 @@
-import React from 'react'
+import { TieredMenu } from 'primereact/tieredmenu';
+import React, { useRef } from 'react'
 
 const Category = () => {
+
+  const menu: any = useRef(null);
+  const items = [
+    {
+      label: 'Favorite',
+      icon: 'pi pi-star',
+      command: () => {
+        console.log("Hello");
+      }
+    },
+    {
+      label: 'Rename',
+      icon: 'pi pi-pencil',
+      command: () => {
+        console.log("Hello");
+      }
+    },
+    {
+      label: 'Table View',
+      icon: 'pi pi-table',
+      command: () => {
+        console.log("Hello");
+      }
+    },
+    {
+      label: 'Delete',
+      icon: 'pi pi-trash',
+      command: () => {
+        console.log("Hello");
+      }
+    }
+  ];
+
+
   return (
     <>
       <div className='flex items-center justify-between text-slate-700 hover:text-slate-800 hover:bg-slate-50 cursor-pointer p-1 rounded'>
@@ -11,7 +46,11 @@ const Category = () => {
         </div>
 
         <div>
-          <i className="pi pi-ellipsis-v p-1 text-sm text-slate-600 hover:text-text-color cursor-pointer"></i>
+          <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
+          <i
+            className="pi pi-ellipsis-v p-1 text-sm text-slate-600 hover:text-text-color cursor-pointer"
+            onClick={(e) => menu.current.toggle(e)}
+          ></i>
         </div>
 
       </div>
