@@ -5,7 +5,7 @@ const CategorySidebar = () => {
   return (
     <>
       <div className='w-[220px] border border-y-0 border-l-0 p-2'>
-        <div className='w-full p-1 flex items-center justify-end'>
+        <div className='w-full mb-1 p-1 flex items-center justify-end'>
           {/* <p className='font-bold text-slate-600'>Category</p> */}
 
           <div className='flex items-center border rounded'>
