@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Tootip bacground color */
 .p-tooltip-text	{
   background-color: #333333 !important;

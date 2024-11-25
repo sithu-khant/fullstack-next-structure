@@ -7,7 +7,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-      <div className='flex gap-2'>
+      <div className='flex'>
         <IconSidebar />
         <CategorySidebar />
         <ItemsSidebar />
