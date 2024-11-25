@@ -12,6 +12,7 @@
   * (11.25.09) - Committed for safety.
   * (11.25.10) - Added tieredmenu.
   * (11.25.11) - Styled tieredmenu.
+  * (11.25.12) - Added tooltip to create category plus icon.
 * Sun Nov 24, 2024
   * (11.24.01) - Created `landing-pages` folder.
 * Sat Nov 23, 2024

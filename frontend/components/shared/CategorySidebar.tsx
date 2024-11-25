@@ -3,6 +3,7 @@
 import React, { useRef } from 'react'
 import Category from './Category';
 import { TieredMenu } from 'primereact/tieredmenu';
+import TooltipUtils from '../utils/TooltipUtils';
 
 const CategorySidebar = () => {
 
@@ -38,6 +39,7 @@ const CategorySidebar = () => {
           {/* <p className='font-bold text-slate-600'>Category</p> */}
 
           <div className='flex items-center border rounded'>
+            <TooltipUtils target='.pi-plus' content='Create category' />
             <i className="pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"></i>
 
             <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
