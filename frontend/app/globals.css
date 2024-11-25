@@ -5,7 +5,8 @@
 
 /* Tootip bacground color */
 .p-tooltip-text	{
-  background-color: red !important;
+  background-color: #333333 !important;
+  padding: 5px 10px;
 }
 
 @layer components {

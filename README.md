@@ -5,6 +5,7 @@
   * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.
   * (11.25.03) - Committed for safety.
   * (11.25.04) - Added tooltips.
+  * (11.25.05) - Styled tooltip component.
 * Sun Nov 24, 2024
   * (11.24.01) - Created `landing-pages` folder.
 * Sat Nov 23, 2024

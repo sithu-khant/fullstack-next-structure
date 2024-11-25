@@ -9,8 +9,7 @@ interface Props {
 const TooltipUtils = ({ target, content }: Props) => {
   return (
     <>
-      {/* <Tooltip target={target} showDelay={1000} hideDelay={300} content={content} /> */}
-      <Tooltip target={target} content={content} />
+      <Tooltip target={target} showDelay={1000} hideDelay={300} content={content} />
     </>
   )
 }
