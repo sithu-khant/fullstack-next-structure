@@ -9,8 +9,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#F4F5F7",
+        background: "var(--background)",
         foreground: "var(--foreground)",
+        page: "#F4F5F7",
         primary: "#0061F2",
         "secondary-primary": "#0056D6",
         "hover-blue": "#E2F1FF",
@@ -18,7 +19,7 @@ export default {
         "accent-green": "#48C78E",
         "alert-color": "#F23A55",
         "text": "#333333",
-        "border-gray": "#A0A9B3"
+        "soft-gray": "#A0A9B3"
       },
     },
   },

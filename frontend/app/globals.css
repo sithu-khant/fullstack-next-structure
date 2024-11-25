@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .icons-div {
+    @apply flex flex-col items-center;
+  }
+
+  .icon {
+    @apply text-lg text-dark p-3 rounded hover:cursor-pointer hover:bg-hover-blue;
+  }
+
+  .active {
+    @apply text-secondary-primary
+  }
+}
