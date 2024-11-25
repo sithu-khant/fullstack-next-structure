@@ -8,13 +8,31 @@
   padding: 5px 10px;
 }
 
+/* Tieredmenu */
+.p-tieredmenu {
+  width: 120px;
+  font-size: 14px;
+}
+
+.p-menuitem {
+  padding: 2px 5px;
+}
+
+.p-menuitem-icon,
+.p-submenu-icon	{
+  padding: 1px;
+  font-size: 12px;
+}
+
+
 @layer components {
   .icons-div {
     @apply flex flex-col items-center;
   }
 
   .icon {
-    @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer hover:bg-hover-color;
+    @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer;
+    /* @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer hover:bg-hover-color; */
   }
 
   .active {

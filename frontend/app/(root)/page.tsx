@@ -7,7 +7,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-      <div className='flex'>
+      <div className='flex text-slate-700'>
         <IconSidebar />
         <CategorySidebar />
         <ItemsSidebar />
