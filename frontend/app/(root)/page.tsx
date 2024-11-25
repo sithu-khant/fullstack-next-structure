@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <>
-      <code>Balex</code>
+      <h1>Hello</h1>
     </>
   )
 };
