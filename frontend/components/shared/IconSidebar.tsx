@@ -6,7 +6,7 @@ const IconSidebar = () => {
   return (
     <div className='flex flex-col min-h-screen justify-between p-2 border border-y-0 border-r-muted-gray'>
       <div className='icons-div'>
-        <Image className='mt-2 mb-3' src={"/balex-logo-200.png"} alt='Logo' width={30} height={30} />
+        <Image className='mt-2 mb-3' src={"/balex-logo-200.png"} alt='Logo' width={30} height={30} priority={true} />
 
         <TooltipUtils target='.subscriptions-icon-iconsidebar' content='Subscriptions' />
         <i className='subscriptions-icon-iconsidebar pi pi-credit-card icon active'></i>

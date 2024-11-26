@@ -58,4 +58,8 @@
   .active {
     @apply text-secondary-color;
   }
+
+  .category-input-field-button {
+    @apply border text-xs rounded px-1 bg-slate-100 text-slate-600;
+  }
 }
