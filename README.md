@@ -5,6 +5,7 @@
   * (11.26.02) - Trying to deploy on Vercel.
   * (11.26.03) - Committed for safety.
   * (11.26.04) - Updated styles.
+  * (11.26.05) - Changed icon tooltip class names.
 * Mon Nov 25, 2024
   * (11.25.01) - Made `Inter` font as default font family. 
   * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.

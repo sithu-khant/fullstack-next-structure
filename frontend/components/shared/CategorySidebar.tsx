@@ -39,11 +39,11 @@ const CategorySidebar = () => {
           {/* <p className='font-bold text-slate-600'>Category</p> */}
 
           <div className='flex items-center border rounded'>
-            <TooltipUtils target='.pi-plus' content='Create category' />
-            <i className="pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"></i>
+            <TooltipUtils target='.create-category-icon' content='Create category' />
+            <i className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"></i>
 
-            <TooltipUtils target='.pi-table' content='Table View' />
-            <i className="pi pi-table p-2 text-sm text-slate-500 cursor-pointer"></i>
+            <TooltipUtils target='.category-table-view-icon' content='Table View' />
+            <i className="category-table-view-icon pi pi-table p-2 text-sm text-slate-500 cursor-pointer"></i>
 
             <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
             <i

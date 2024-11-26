@@ -8,20 +8,20 @@ const IconSidebar = () => {
       <div className='icons-div'>
         <Image className='mt-2 mb-3' src={"/balex-logo-200.png"} alt='Logo' width={30} height={30} />
 
-        <TooltipUtils target='.pi-credit-card' content='Subscriptions' />
-        <i className='pi pi-credit-card icon active'></i>
+        <TooltipUtils target='.subscriptions-icon-iconsidebar' content='Subscriptions' />
+        <i className='subscriptions-icon-iconsidebar pi pi-credit-card icon active'></i>
 
-        <TooltipUtils target='.pi-wallet' content='Finance' />
-        <i className='pi pi-wallet icon'></i>
+        <TooltipUtils target='.finance-icon-iconsidebar' content='Finance' />
+        <i className='finance-icon-iconsidebar pi pi-wallet icon'></i>
       </div>
 
       <div className='icons-div'>
 
-        <TooltipUtils target='.pi-user' content='Profile' />
-        <i className='pi pi-user icon'></i>
+        <TooltipUtils target='.profile-icon-iconsidebar' content='Profile' />
+        <i className='profile-icon-iconsidebar pi pi-user icon'></i>
 
-        <TooltipUtils target='.pi-info-circle' content='Info' />
-        <i className='pi pi-info-circle icon'></i>
+        <TooltipUtils target='.info-icon-iconsidebar' content='Info' />
+        <i className='info-icon-iconsidebar pi pi-info-circle icon'></i>
       </div>
     </div>
   )
