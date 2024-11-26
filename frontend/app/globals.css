@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.emoji-input-field::selection {
+  background-color: transparent;
+}
+
 /* Tootip bacground color */
 .p-tooltip-text	{
   background-color: #333333 !important;

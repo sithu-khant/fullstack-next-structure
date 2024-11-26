@@ -8,6 +8,7 @@
   * (11.26.05) - Changed icon tooltip class names.
   * (11.26.07) - Committed for safety.
   * (11.26.08) - Cleaned code.
+  * (11.26.09) - Finished basic design for emoji picker.
 * Mon Nov 25, 2024
   * (11.25.01) - Made `Inter` font as default font family. 
   * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.

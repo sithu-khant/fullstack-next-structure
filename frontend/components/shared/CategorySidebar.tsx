@@ -4,19 +4,13 @@ import React, { useRef, useState } from 'react'
 import Category from './CategoryCard';
 import { TieredMenu } from 'primereact/tieredmenu';
 import TooltipUtils from '../utils/TooltipUtils';
-
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
 import { categorySidebarItems } from '@/constants';
+import CategoryInputField from '../forms/CategoryInputField';
 
 const CategorySidebar = () => {
 
   const categorySidebarMenu: any = useRef(null);
-  const [emoji, setEmoji] = useState("");
-
-  const handleEmojiSelect = (emoji: any) => {
-    setEmoji(emoji.native);
-  };
+  const [isCreateCategory, setIsCreateCategory] = useState(false);
 
   return (
     <>
@@ -26,7 +20,11 @@ const CategorySidebar = () => {
 
           <div className='flex items-center border rounded'>
             <TooltipUtils target='.create-category-icon' content='Create category' />
-            <i className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"></i>
+            <i
+              className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"
+              onClick={() => setIsCreateCategory(!isCreateCategory)}
+            >
+            </i>
 
             <TooltipUtils target='.category-table-view-icon' content='Table View' />
             <i className="category-table-view-icon pi pi-table p-2 text-sm text-slate-500 cursor-pointer"></i>
@@ -40,15 +38,7 @@ const CategorySidebar = () => {
           </div>
         </div>
 
-        <Picker
-          data={data}
-          onEmojiSelect={handleEmojiSelect}
-          theme="light"
-          previewPosition="none"
-          maxFrequentRows="0"
-        />
-        <input type="text" value={emoji} readOnly />
-
+        <CategoryInputField activeInputField={isCreateCategory} />
 
         <div>
           <Category />
