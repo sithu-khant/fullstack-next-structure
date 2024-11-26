@@ -10,6 +10,7 @@
   * (11.26.08) - Cleaned code.
   * (11.26.09) - Finished basic design for emoji picker.
   * (11.26.10) - Add `Favorites` and `All` seperator in CategorySidebar.
+  * (11.26.11) - Committed for safety.
 * Mon Nov 25, 2024
   * (11.25.01) - Made `Inter` font as default font family. 
   * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.

@@ -20,19 +20,17 @@ const CategoryInputField = ({ activeInputField }: Props) => {
     <>
       <div className={`${activeInputField ? "block" : "hidden"}`}>
 
-        <div className='flex w-1'>
-          <div>
-            <input
-              type="text"
-              value={emoji}
-              readOnly
-              className='bg-input-field-background emoji-input-field rounded focus:outline-none w-[30px] h-[30px] flex items-center text-center mr-1 cursor-pointer'
-              onClick={() => setIsChooseEmoji(!isChooseEmoji)}
-            />
-          </div>
+        <div className='flex items-center justify-center'>
           <input
             type="text"
-            className='bg-input-field-background'
+            value={emoji}
+            readOnly
+            className='bg-input-field-background emoji-input-field rounded focus:outline-none w-[28px] h-[28px] flex items-center text-center mr-1 cursor-pointer'
+            onClick={() => setIsChooseEmoji(!isChooseEmoji)}
+          />
+          <input
+            type="text"
+            className='bg-input-field-background w-full text-slate-700 rounded focus:outline-none p-1 text-sm'
           />
         </div>
 
