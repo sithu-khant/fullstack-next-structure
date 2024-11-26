@@ -41,6 +41,14 @@ const CategorySidebar = () => {
         <CategoryInputField activeInputField={isCreateCategory} />
 
         <div>
+
+          <p className='text-sm font-semibold text-slate-600 ml-1 pt-3'>Favorites</p>
+          <Category />
+          <Category />
+          <Category />
+          <Category />
+
+          <p className='text-sm font-semibold text-slate-500 m-1 pt-3'>All</p>
           <Category />
           <Category />
           <Category />

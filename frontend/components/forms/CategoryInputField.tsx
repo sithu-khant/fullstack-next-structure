@@ -8,7 +8,7 @@ interface Props {
 
 const CategoryInputField = ({ activeInputField }: Props) => {
 
-  const [emoji, setEmoji] = useState("");
+  const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
 
   const handleEmojiSelect = (emoji: any) => {
