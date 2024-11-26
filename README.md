@@ -12,6 +12,7 @@
   * (11.26.10) - Add `Favorites` and `All` seperator in CategorySidebar.
   * (11.26.11) - Committed for safety.
   * (11.26.12) - Finished create category input field.
+  * (11.26.13) - Changed constant arrays to functions in `constants`.
 * Mon Nov 25, 2024
   * (11.25.01) - Made `Inter` font as default font family. 
   * (11.25.02) - Started coding `IconSidebar`. Configured `tailwind.config.ts`.

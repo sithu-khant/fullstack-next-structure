@@ -6,11 +6,22 @@ const Category = () => {
 
   const categoryCardMenu: any = useRef(null);
   const [isEllipsisClicked, setIsEllipsisClicked] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleEllipsisClick = (e: React.MouseEvent) => {
     setIsEllipsisClicked(!isEllipsisClicked);
     categoryCardMenu.current.toggle(e)
   }
+
+  const handleFavorite = () => {
+  };
+
+  const handleRename = () => {
+
+  };
+
+  const handleTableView = () => { };
+  const handleDelete = () => { };
 
   return (
     <>
@@ -22,7 +33,7 @@ const Category = () => {
         </div>
 
         <div className={`opacity-0 group-hover:opacity-100 ${isEllipsisClicked && "opacity-100"}`}>
-          <TieredMenu model={categoryCardItems} popup ref={categoryCardMenu} breakpoint="28px" onHide={() => setIsEllipsisClicked(!isEllipsisClicked)} />
+          <TieredMenu model={categoryCardItems({ handleFavorite, handleRename, handleTableView, handleDelete })} popup ref={categoryCardMenu} breakpoint="28px" onHide={() => setIsEllipsisClicked(!isEllipsisClicked)} />
           <i
             className="pi pi-ellipsis-v p-1 text-sm text-slate-600 hover:text-text-color cursor-pointer"
             onClick={handleEllipsisClick}
