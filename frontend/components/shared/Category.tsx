@@ -1,9 +1,18 @@
 import { TieredMenu } from 'primereact/tieredmenu';
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Category = () => {
 
   const menu: any = useRef(null);
+  const [isEllipsisClicked, setIsEllipsisClicked] = useState(false);
+
+
+  const handleEllipsisClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsEllipsisClicked(!isEllipsisClicked);
+    menu.current.toggle(e)
+  }
+
   const items = [
     {
       label: 'Favorite',
@@ -38,19 +47,20 @@ const Category = () => {
 
   return (
     <>
-      <div className='flex items-center justify-between text-slate-700 hover:text-slate-800 hover:bg-slate-50 cursor-pointer p-1 rounded'>
+      <div className='group flex items-center justify-between text-slate-700 hover:text-slate-800 hover:bg-slate-50 cursor-pointer m-1 p-1 rounded'>
 
         <div className='flex items-center'>
           <p className='px-1 pr-2'>🏠</p>
-          <p className='text-sm'>Personal</p>
+          <p className='text-sm'>Personal This is a long text</p>
         </div>
 
-        <div>
+        <div className={`opacity-0 group-hover:opacity-100 ${isEllipsisClicked ? "opacity-100" : "opacity-0"}`}>
           <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
           <i
             className="pi pi-ellipsis-v p-1 text-sm text-slate-600 hover:text-text-color cursor-pointer"
-            onClick={(e) => menu.current.toggle(e)}
-          ></i>
+            onClick={handleEllipsisClick}
+          >
+          </i>
         </div>
 
       </div>
