@@ -1,11 +1,20 @@
 "use client"
 
-import React, { useRef } from 'react'
-import Category from './Category';
+import React, { useRef, useState } from 'react'
+import Category from './CategoryCard';
 import { TieredMenu } from 'primereact/tieredmenu';
 import TooltipUtils from '../utils/TooltipUtils';
 
+import data from '@emoji-mart/data'
+import Picker from '@emoji-mart/react'
+
 const CategorySidebar = () => {
+
+  const [emoji, setEmoji] = useState("");
+
+  const handleEmojiSelect = (emoji: any) => {
+    setEmoji(emoji.native);
+  };
 
   const menu: any = useRef(null);
   const items = [
@@ -53,6 +62,15 @@ const CategorySidebar = () => {
             </i>
           </div>
         </div>
+
+        <Picker
+          data={data}
+          onEmojiSelect={handleEmojiSelect}
+          theme="light"
+          previewPosition="none"
+          maxFrequentRows="0"
+        />
+        <input type="text" value={emoji} readOnly />
 
 
         <div>
