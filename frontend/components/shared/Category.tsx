@@ -8,7 +8,6 @@ const Category = () => {
 
 
   const handleEllipsisClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
     setIsEllipsisClicked(!isEllipsisClicked);
     menu.current.toggle(e)
   }
@@ -54,8 +53,8 @@ const Category = () => {
           <p className='text-sm'>Personal This is a long text</p>
         </div>
 
-        <div className={`opacity-0 group-hover:opacity-100 ${isEllipsisClicked ? "opacity-100" : "opacity-0"}`}>
-          <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
+        <div className={`opacity-0 group-hover:opacity-100 ${isEllipsisClicked && "opacity-100"}`}>
+          <TieredMenu model={items} popup ref={menu} breakpoint="28px" onHide={() => setIsEllipsisClicked(!isEllipsisClicked)} />
           <i
             className="pi pi-ellipsis-v p-1 text-sm text-slate-600 hover:text-text-color cursor-pointer"
             onClick={handleEllipsisClick}

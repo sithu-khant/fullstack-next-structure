@@ -14,12 +14,12 @@ const CategorySidebar = () => {
       icon: 'pi pi-sort',
       items: [
         {
-          label: 'Styled',
-          url: '/theming'
+          label: 'A to Z',
+          icon: 'pi pi-sort-alpha-down',
         },
         {
-          label: 'Unstyled',
-          url: '/unstyled'
+          label: 'Z to A',
+          icon: 'pi pi-sort-alpha-down-alt',
         }
       ]
     },
@@ -41,6 +41,9 @@ const CategorySidebar = () => {
           <div className='flex items-center border rounded'>
             <TooltipUtils target='.pi-plus' content='Create category' />
             <i className="pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"></i>
+
+            <TooltipUtils target='.pi-table' content='Table View' />
+            <i className="pi pi-table p-2 text-sm text-slate-500 cursor-pointer"></i>
 
             <TieredMenu model={items} popup ref={menu} breakpoint="28px" />
             <i
