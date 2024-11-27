@@ -1,4 +1,4 @@
-export const categorySidebarItems = ({ handleSortAtoZ, handleSortZtoA, handleTableView }: any) => {
+export const categorySidebarItems = ({ handleSortAtoZ, handleSortZtoA, handleTrash }: any) => {
 
   return [
     {
@@ -22,10 +22,10 @@ export const categorySidebarItems = ({ handleSortAtoZ, handleSortZtoA, handleTab
       ]
     },
     {
-      label: 'Table View',
-      icon: 'pi pi-table',
+      label: 'Trash',
+      icon: 'pi pi-trash',
       command: () => {
-        handleTableView();
+        handleTrash();
       }
     }
   ]

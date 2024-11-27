@@ -15,7 +15,7 @@ const ItemsSidebar = () => {
 
   return (
     <>
-      <div className='w-[240px] h-screen overflow-y-scroll scrollbar-thin border border-y-0 border-l-0 p-2'>
+      <div className='w-[280px] h-screen overflow-y-scroll scrollbar-thin border border-y-0 border-l-0 p-2'>
         <div className='mb-1 p-1 flex items-center justify-between'>
           <p className='font-bold text-slate-600'> 🏠 Category</p>
 
@@ -37,6 +37,20 @@ const ItemsSidebar = () => {
 
         <div>
 
+          <p className='text-sm font-semibold text-slate-500 ml-2'>A</p>
+          <SubItemCard />
+          <SubItemCard />
+
+          <p className='text-sm font-semibold text-slate-500 ml-2'>B</p>
+          <SubItemCard />
+          <SubItemCard />
+          <SubItemCard />
+
+          <p className='text-sm font-semibold text-slate-500 ml-2'>C</p>
+          <SubItemCard />
+          <SubItemCard />
+          <SubItemCard />
+          <SubItemCard />
           <SubItemCard />
 
         </div>

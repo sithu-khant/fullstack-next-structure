@@ -17,6 +17,7 @@
   * (11.27.08) - Finished routing.
   * (11.27.09) - Renamed files.
   * (11.27.10) - Added toolbar to `SubItemsSidebar`.
+  * (11.27.11) - Finishe styling `SubItemCard`.
 * Tue Nov 26, 2024
   * (11.26.01) - Added Google Analytics tag to `landing-pages`.
   * (11.26.02) - Trying to deploy on Vercel.

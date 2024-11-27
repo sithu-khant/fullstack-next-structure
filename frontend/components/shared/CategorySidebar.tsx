@@ -14,7 +14,7 @@ const CategorySidebar = () => {
 
   const handleSortAtoZ = () => { };
   const handleSortZtoA = () => { };
-  const handleTableView = () => { };
+  const handleTrash = () => { };
 
   return (
     <>
@@ -33,7 +33,7 @@ const CategorySidebar = () => {
             <TooltipUtils target='.category-table-view-icon' content='Table View' />
             <i className="category-table-view-icon pi pi-table p-2 text-sm text-slate-500 cursor-pointer"></i>
 
-            <TieredMenu model={categorySidebarItems({ handleSortAtoZ, handleSortZtoA, handleTableView })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={categorySidebarItems({ handleSortAtoZ, handleSortZtoA, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
             <i
               className="pi pi-ellipsis-v p-1 text-sm text-slate-600 cursor-pointer"
               onClick={(e) => categorySidebarMenu.current.toggle(e)}
