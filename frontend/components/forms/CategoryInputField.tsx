@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
@@ -10,10 +10,15 @@ interface Props {
 
 const CategoryInputField = ({ activeInputField }: Props) => {
 
+  const [inputFielStatus, setInputFieldStatus] = useState(activeInputField);
   const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
   const emojiOverlayRef = useRef(null);
   const [categoryText, setCategoryText] = useState("");
+
+  useEffect(() => {
+    setInputFieldStatus(activeInputField);
+  }, [activeInputField])
 
   const handleEmojiSelect = (emoji: any) => {
     setEmoji(emoji.native);
@@ -36,7 +41,7 @@ const CategoryInputField = ({ activeInputField }: Props) => {
 
   return (
     <>
-      <div className={`${activeInputField ? "block" : "hidden"}`}>
+      <div className={`${inputFielStatus ? "block" : "hidden"}`}>
 
         <div className='flex items-center justify-center'>
           <input
