@@ -11,19 +11,25 @@ interface Props {
 
 const CategoryInputField = ({ toggleInputField, setToggleInputField }: Props) => {
 
+  const inputFieldRef = useRef(null);
+  const emojiOverlayRef = useRef(null);
+
   const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
-  const emojiOverlayRef = useRef(null);
   const [categoryText, setCategoryText] = useState("");
+
+  useClickOutside(inputFieldRef, () => {
+    setToggleInputField(false);
+  })
+
+  useClickOutside(emojiOverlayRef, () => {
+    setIsChooseEmoji(false);
+  })
 
   const handleEmojiSelect = (emoji: any) => {
     setEmoji(emoji.native);
     setIsChooseEmoji(false);
   };
-
-  useClickOutside(emojiOverlayRef, () => {
-    setIsChooseEmoji(false);
-  })
 
   const handleInputChange = (e: any) => {
     e.preventDefault();
@@ -33,12 +39,14 @@ const CategoryInputField = ({ toggleInputField, setToggleInputField }: Props) =>
 
   const handleSave = () => {
     setToggleInputField(!toggleInputField);
+
+    console.log(emoji);
     console.log(categoryText);
   }
 
   return (
     <>
-      <div className={`${toggleInputField ? "block" : "hidden"}`}>
+      <div className={`${toggleInputField ? "block" : "hidden"}`} ref={inputFieldRef}>
 
         <div className='flex items-center justify-center'>
           <input
