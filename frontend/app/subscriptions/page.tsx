@@ -1,8 +1,7 @@
 import React from 'react';
 import CategorySidebar from '@/components/shared/CategorySidebar';
-import IconSidebar from '@/components/shared/IconSidebar';
-import Item from '@/components/shared/Item';
-import ItemsSidebar from '@/components/shared/ItemsSidebar';
+import Item from '@/components/shared/SubItem';
+import ItemsSidebar from '@/components/shared/SubItemsSidebar';
 
 const page = () => {
   return (

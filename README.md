@@ -15,6 +15,7 @@
   * (11.27.06) - Added custom scrollbar.
   * (11.27.07) - Committed for safety. (created `subscriptions` and `finance` routes)
   * (11.27.08) - Finished routing.
+  * (11.27.09) - Renamed files.
 * Tue Nov 26, 2024
   * (11.26.01) - Added Google Analytics tag to `landing-pages`.
   * (11.26.02) - Trying to deploy on Vercel.
