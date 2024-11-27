@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
+import { useClickOutside } from "primereact/hooks";
 
 interface Props {
   activeInputField: boolean
@@ -11,11 +12,17 @@ const CategoryInputField = ({ activeInputField }: Props) => {
 
   const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
+  const emojiOverlayRef = useRef(null);
   const [categoryText, setCategoryText] = useState("");
 
   const handleEmojiSelect = (emoji: any) => {
     setEmoji(emoji.native);
+    setIsChooseEmoji(false);
   };
+
+  useClickOutside(emojiOverlayRef, () => {
+    setIsChooseEmoji(false);
+  })
 
   const handleInputChange = (e: any) => {
     e.preventDefault();
@@ -54,7 +61,7 @@ const CategoryInputField = ({ activeInputField }: Props) => {
           </div>
         </div>
 
-        <div className={`${isChooseEmoji ? "block" : "hidden"} absolute`}>
+        <div ref={emojiOverlayRef} className={`${isChooseEmoji ? "block" : "hidden"} absolute`}>
           <Picker
             data={data}
             onEmojiSelect={handleEmojiSelect}
