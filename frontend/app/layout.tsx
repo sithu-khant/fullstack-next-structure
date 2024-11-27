@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import 'primereact/resources/themes/mdc-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import IconSidebar from "@/components/shared/IconSidebar";
 
 const interFont = Inter({
   subsets: ["latin"],
@@ -25,7 +26,11 @@ export default function RootLayout({
       <body
         className={`${interFont.className} antialiased bg-page custom-scrollbar`}
       >
-        {children}
+        <div className='flex text-slate-700'>
+          <IconSidebar />
+
+          {children}
+        </div>
       </body>
     </html>
   );

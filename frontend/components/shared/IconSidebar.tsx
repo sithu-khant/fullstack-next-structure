@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import TooltipUtils from './../utils/TooltipUtils';
+import Link from 'next/link';
 
 const IconSidebar = () => {
   return (
@@ -8,11 +9,15 @@ const IconSidebar = () => {
       <div className='icons-div'>
         <Image className='mt-2 mb-3' src={"/balex-logo-200.png"} alt='Logo' width={30} height={30} priority={true} />
 
-        <TooltipUtils target='.subscriptions-icon-iconsidebar' content='Subscriptions' />
-        <i className='subscriptions-icon-iconsidebar pi pi-credit-card icon active'></i>
+        <Link href={"/subscriptions"}>
+          <TooltipUtils target='.subscriptions-icon-iconsidebar' content='Subscriptions' />
+          <i className='subscriptions-icon-iconsidebar pi pi-credit-card icon active'></i>
+        </Link>
 
-        <TooltipUtils target='.finance-icon-iconsidebar' content='Finance' />
-        <i className='finance-icon-iconsidebar pi pi-wallet icon'></i>
+        <Link href={"/finance"}>
+          <TooltipUtils target='.finance-icon-iconsidebar' content='Finance' />
+          <i className='finance-icon-iconsidebar pi pi-wallet icon'></i>
+        </Link>
       </div>
 
       <div className='icons-div'>

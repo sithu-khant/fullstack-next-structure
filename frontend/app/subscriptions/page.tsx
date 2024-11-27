@@ -7,12 +7,9 @@ import ItemsSidebar from '@/components/shared/ItemsSidebar';
 const page = () => {
   return (
     <>
-      <div className='flex text-slate-700'>
-        <IconSidebar />
-        <CategorySidebar />
-        <ItemsSidebar />
-        <Item />
-      </div>
+      <CategorySidebar />
+      <ItemsSidebar />
+      <Item />
     </>
   )
 }
