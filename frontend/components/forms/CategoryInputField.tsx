@@ -38,6 +38,8 @@ const CategoryInputField = ({ toggleInputField, setToggleInputField }: Props) =>
   }
 
   const handleSave = () => {
+    setEmoji("😃");
+    setCategoryText("");
     setToggleInputField(!toggleInputField);
 
     console.log(emoji);
