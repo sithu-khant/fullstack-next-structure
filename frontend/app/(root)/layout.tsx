@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interFont.className} antialiased bg-page`}
+        className={`${interFont.className} antialiased bg-page custom-scrollbar`}
       >
         {children}
       </body>
