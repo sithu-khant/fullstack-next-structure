@@ -3,7 +3,7 @@ import { TieredMenu } from 'primereact/tieredmenu';
 import React, { useRef, useState } from 'react'
 import CategoryInputField from '../forms/CategoryInputField';
 
-const Category = () => {
+const CategoryCard = () => {
 
   const categoryCardMenu: any = useRef(null);
   const [isEllipsisClicked, setIsEllipsisClicked] = useState(false);
@@ -53,4 +53,4 @@ const Category = () => {
   )
 }
 
-export default Category;
+export default CategoryCard;

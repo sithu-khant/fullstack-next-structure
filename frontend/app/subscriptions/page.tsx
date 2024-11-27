@@ -1,7 +1,7 @@
+import CategorySidebar from '@/components/subscriptions/CategorySidebar';
+import Item from '@/components/subscriptions/Item';
+import ItemsSidebar from '@/components/subscriptions/ItemsSidebar';
 import React from 'react';
-import CategorySidebar from '@/components/shared/CategorySidebar';
-import Item from '@/components/shared/SubItem';
-import ItemsSidebar from '@/components/shared/SubItemsSidebar';
 
 const page = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SubItemCard = () => {
+const ItemCard = () => {
   return (
     <>
       <div className='my-1 p-2 hover:bg-slate-50 rounded flex items-center cursor-pointer'>
@@ -16,4 +16,4 @@ const SubItemCard = () => {
   )
 }
 
-export default SubItemCard;
+export default ItemCard;

@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import TooltipUtils from '../utils/TooltipUtils';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { subItemsSidebarItems } from '@/constants';
-import SubItemCard from "./SubItemCard";
+import ItemCard from "./ItemCard";
 
 const ItemsSidebar = () => {
 
@@ -38,20 +38,20 @@ const ItemsSidebar = () => {
         <div>
 
           <p className='text-sm font-semibold text-slate-500 ml-2'>A</p>
-          <SubItemCard />
-          <SubItemCard />
+          <ItemCard />
+          <ItemCard />
 
           <p className='text-sm font-semibold text-slate-500 ml-2'>B</p>
-          <SubItemCard />
-          <SubItemCard />
-          <SubItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
 
           <p className='text-sm font-semibold text-slate-500 ml-2'>C</p>
-          <SubItemCard />
-          <SubItemCard />
-          <SubItemCard />
-          <SubItemCard />
-          <SubItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
 
         </div>
 

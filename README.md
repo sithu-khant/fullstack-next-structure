@@ -18,6 +18,7 @@
   * (11.27.09) - Renamed files.
   * (11.27.10) - Added toolbar to `SubItemsSidebar`.
   * (11.27.11) - Finishe styling `SubItemCard`.
+  * (11.27.12) - Created `subscriptions` and `finance` folders in `components` folder. Rebuilt folder structures and imports.
 * Tue Nov 26, 2024
   * (11.26.01) - Added Google Analytics tag to `landing-pages`.
   * (11.26.02) - Trying to deploy on Vercel.
