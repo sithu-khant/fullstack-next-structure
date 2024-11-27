@@ -15,18 +15,23 @@ const Item = () => {
   return (
     <>
       <div className='w-full'>
-        <div className='max-w-[900px] m-auto'>
+        <div className='max-w-[800px] m-auto'>
 
-          <div>
-            <div>
-              <i className="category-table-view-icon pi pi-pencil p-2 text-sm text-slate-500 cursor-pointer"></i>
-              Edit
+          <div className='flex items-center justify-end m-1 mt-3'>
+            <div className='flex items-center hover:bg-slate-50 px-2 py-2 cursor-pointer rounded'>
+              <i className="pi pi-star mr-3 text-sm" style={{ fontWeight: "900" }}></i>
+              <p className=''>Favorite</p>
+            </div>
+
+            <div className='flex items-center hover:bg-slate-50 px-2 py-2 cursor-pointer rounded'>
+              <i className="pi pi-pencil mr-3 text-xs" style={{ fontWeight: "900" }}></i>
+              <p className=''>Edit</p>
             </div>
 
             <div>
               <TieredMenu model={subItemItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
               <i
-                className="pi pi-ellipsis-v p-1 text-sm text-slate-600 cursor-pointer"
+                className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
                 onClick={(e) => itemMenu.current.toggle(e)}
               ></i>
             </div>
