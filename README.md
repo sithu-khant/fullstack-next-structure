@@ -5,6 +5,7 @@
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.
+  * (11.27.03) - Fixed toggleInputField.
 * Tue Nov 26, 2024
   * (11.26.01) - Added Google Analytics tag to `landing-pages`.
   * (11.26.02) - Trying to deploy on Vercel.

@@ -5,20 +5,16 @@ import Picker from '@emoji-mart/react';
 import { useClickOutside } from "primereact/hooks";
 
 interface Props {
-  activeInputField: boolean
+  toggleInputField: boolean
+  setToggleInputField: any;
 }
 
-const CategoryInputField = ({ activeInputField }: Props) => {
+const CategoryInputField = ({ toggleInputField, setToggleInputField }: Props) => {
 
-  const [inputFielStatus, setInputFieldStatus] = useState(activeInputField);
   const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
   const emojiOverlayRef = useRef(null);
   const [categoryText, setCategoryText] = useState("");
-
-  useEffect(() => {
-    setInputFieldStatus(activeInputField);
-  }, [activeInputField])
 
   const handleEmojiSelect = (emoji: any) => {
     setEmoji(emoji.native);
@@ -36,12 +32,13 @@ const CategoryInputField = ({ activeInputField }: Props) => {
   }
 
   const handleSave = () => {
+    setToggleInputField(!toggleInputField);
     console.log(categoryText);
   }
 
   return (
     <>
-      <div className={`${inputFielStatus ? "block" : "hidden"}`}>
+      <div className={`${toggleInputField ? "block" : "hidden"}`}>
 
         <div className='flex items-center justify-center'>
           <input

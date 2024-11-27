@@ -10,7 +10,7 @@ import CategoryInputField from '../forms/CategoryInputField';
 const CategorySidebar = () => {
 
   const categorySidebarMenu: any = useRef(null);
-  const [isCreateCategory, setIsCreateCategory] = useState(false);
+  const [toggleInputField, setToggleInputField] = useState(false);
 
   const handleSortAtoZ = () => { };
   const handleSortZtoA = () => { };
@@ -26,7 +26,7 @@ const CategorySidebar = () => {
             <TooltipUtils target='.create-category-icon' content='Create category' />
             <i
               className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"
-              onClick={() => setIsCreateCategory(!isCreateCategory)}
+              onClick={() => setToggleInputField(!toggleInputField)}
             >
             </i>
 
@@ -42,7 +42,7 @@ const CategorySidebar = () => {
           </div>
         </div>
 
-        <CategoryInputField activeInputField={isCreateCategory} />
+        <CategoryInputField toggleInputField={toggleInputField} setToggleInputField={setToggleInputField} />
 
         <div>
 
