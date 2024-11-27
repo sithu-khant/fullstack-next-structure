@@ -65,3 +65,29 @@ export const categoryCardItems = ({ handleFavorite, handleRename, handleTableVie
 }
 
 
+export const subItemsSidebarItems = ({ handleSortAtoZ, handleSortZtoA }: any) => {
+
+  return [
+    {
+      label: 'Sort',
+      icon: 'pi pi-sort',
+      items: [
+        {
+          label: 'A to Z',
+          icon: 'pi pi-sort-alpha-down',
+          command: () => {
+            handleSortAtoZ();
+          }
+        },
+        {
+          label: 'Z to A',
+          icon: 'pi pi-sort-alpha-down-alt',
+          command: () => {
+            handleSortZtoA();
+          }
+        }
+      ]
+    }
+  ]
+}
+
