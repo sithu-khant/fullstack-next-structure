@@ -67,4 +67,12 @@
     /* @apply scrollbar scrollbar-thumb-background-color scrollbar-track-transparent; */
     @apply scrollbar scrollbar-thumb-input-field-background scrollbar-track-transparent;
   }
+
+  .subscriptions-item-label {
+    @apply text-xs font-semibold text-secondary-color
+  }
+
+  .subscriptions-item-value {
+    @apply text-sm font-semibold text-slate-600;
+  }
 }

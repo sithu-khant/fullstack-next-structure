@@ -1,6 +1,9 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
+import { Knob } from 'primereact/knob';
+import { Chip } from 'primereact/chip';
+
 import { subItemItems } from '@/constants';
 import { TieredMenu } from 'primereact/tieredmenu';
 
@@ -37,14 +40,67 @@ const Item = () => {
             </div>
           </div>
 
-          <div>
-            Heading
-          </div>
+          <div className='max-w-[750px] m-auto'>
+            <div>
+              <p className='text-xl font-semibold mt-1 mb-6'>🏠 Namecheap</p>
+            </div>
 
-          <div>
-            Body
-          </div>
+            <div>
 
+              <div className='mb-3 flex items-center'>
+
+                <Knob
+                  value={55}
+                  showValue={false}
+                  valueColor={"#0056d6"}
+                  size={30}
+                  strokeWidth={18}
+                  className='mr-3'
+                />
+
+                <div>
+                  <p className='subscriptions-item-label'>Day left</p>
+                  <p className='subscriptions-item-value'>365 Days</p>
+                </div>
+              </div>
+
+              <div className='mb-3'>
+                <p className='subscriptions-item-label'>Date from</p>
+                <p className='subscriptions-item-value'>Wed Nov 27, 2024</p>
+              </div>
+
+              <div className='mb-3'>
+                <p className='subscriptions-item-label'>Date to</p>
+                <p className='subscriptions-item-value'>Wed Nov 27, 2025</p>
+              </div>
+
+              <div className='mb-3'>
+                <p className='subscriptions-item-label'>Webiste</p>
+
+                <a href={`https://google.com`} target='_blank' className='subscriptions-item-value text-slate-500'>
+                  https://
+                  <span className='text-primary-color'>google.com</span>
+                </a>
+              </div>
+
+              <div className='mb-3'>
+                <p className='subscriptions-item-label'>Category</p>
+                <Chip label="🏠 Personal" className='bg-slate-100 text-slate-500 text-xs font-semibold mt-1' />
+              </div>
+
+              <div className='mt-8'>
+                <p className='subscriptions-item-label'>Note</p>
+                <p className='subscriptions-item-value'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!</p>
+              </div>
+
+              <div className='mt-8 flex items-center'>
+                <i className='pi pi-history mr-1 text-xs text-slate-600' style={{ fontWeight: "800" }}></i>
+                <p className='subscriptions-item-value'>Last edited: Wed Nov 27, 2024</p>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </div>
     </>
