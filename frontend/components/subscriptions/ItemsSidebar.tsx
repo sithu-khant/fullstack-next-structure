@@ -8,7 +8,7 @@ import ItemCard from "./ItemCard";
 
 const ItemsSidebar = () => {
 
-  const categorySidebarMenu: any = useRef(null);
+  const itemsSidebarMenu: any = useRef(null);
 
   const handleSortAtoZ = () => { };
   const handleSortZtoA = () => { };
@@ -26,10 +26,10 @@ const ItemsSidebar = () => {
             >
             </i>
 
-            <TieredMenu model={subItemsSidebarItems({ handleSortAtoZ, handleSortZtoA })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={subItemsSidebarItems({ handleSortAtoZ, handleSortZtoA })} popup ref={itemsSidebarMenu} breakpoint="28px" />
             <i
               className="pi pi-ellipsis-v p-1 text-sm text-slate-600 cursor-pointer"
-              onClick={(e) => categorySidebarMenu.current.toggle(e)}
+              onClick={(e) => itemsSidebarMenu.current.toggle(e)}
             >
             </i>
           </div>

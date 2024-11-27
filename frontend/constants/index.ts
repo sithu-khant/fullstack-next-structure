@@ -91,3 +91,22 @@ export const subItemsSidebarItems = ({ handleSortAtoZ, handleSortZtoA }: any) =>
   ]
 }
 
+export const subItemItems = ({ handleFavorite, handleDelete }: any) => {
+
+  return [
+    {
+      label: 'Favorite',
+      icon: 'pi pi-star',
+      command: () => {
+        handleFavorite();
+      }
+    },
+    {
+      label: 'Delete',
+      icon: 'pi pi-trash',
+      command: () => {
+        handleDelete();
+      }
+    }
+  ]
+}
