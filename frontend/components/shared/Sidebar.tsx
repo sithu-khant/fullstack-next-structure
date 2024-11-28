@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 
-import { subscriptionsSidebarItems } from '@/constants';
+import { sidebarItems } from '@/constants';
 import { TieredMenu } from 'primereact/tieredmenu';
 import ItemCard from './ItemCard';
 
-const SubscriptionsSidebar = () => {
+const Sidebar = () => {
 
   const categorySidebarMenu: any = useRef(null);
   const handleTableView = () => { };
@@ -22,7 +22,13 @@ const SubscriptionsSidebar = () => {
           </div>
 
           <div>
-            <TieredMenu model={subscriptionsSidebarItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={sidebarItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <i
+              className="pi pi-sort-amount-down p-1 pl-2 text-sm text-slate-600 cursor-pointer"
+              onClick={(e) => categorySidebarMenu.current.toggle(e)}
+            ></i>
+
+            <TieredMenu model={sidebarItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
             <i
               className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
               onClick={(e) => categorySidebarMenu.current.toggle(e)}
@@ -56,4 +62,4 @@ const SubscriptionsSidebar = () => {
   )
 }
 
-export default SubscriptionsSidebar;
+export default Sidebar;

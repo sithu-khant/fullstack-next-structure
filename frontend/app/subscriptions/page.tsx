@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useState } from 'react';
-import SubscriptionsSidebar from '@/components/subscriptions/SubscriptionsSidebar';
+import React from 'react';
+import Sidebar from '@/components/shared/Sidebar';
 
 const page = () => {
 
   return (
     <>
-      <SubscriptionsSidebar />
+      <Sidebar />
     </>
   )
 }
