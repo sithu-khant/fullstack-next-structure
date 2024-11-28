@@ -1,4 +1,4 @@
-export const categorySidebarItems = ({ handleTableView, handleTrash }: any) => {
+export const subscriptionsSidebarItems = ({ handleTableView, handleTrash }: any) => {
 
   return [
     {
