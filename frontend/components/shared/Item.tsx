@@ -18,7 +18,7 @@ const Item = () => {
 
   return (
     <>
-      <div className='w-auto mx-auto'>
+      <div className='w-full mx-auto'>
         <div className='max-w-[800px] md:m-auto p-3'>
 
           <div className='flex items-center justify-end m-1 mt-3'>

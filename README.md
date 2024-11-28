@@ -22,6 +22,7 @@
   * (11.28.13) - Styled `CustomTieredMenu`.
   * (11.28.14) - Started implementing search input field.
   * (11.28.15) - Added `Search` component for searching subscriptions and changed to default cursor when hovering.
+  * (11.28.16) - Updated sidebar and item widths.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.

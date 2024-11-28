@@ -28,7 +28,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className='w-[25%] h-screen overflow-y-scroll scrollbar-thin p-3 bg-background-color'>
+      <div className='w-[280px] h-screen overflow-y-scroll scrollbar-thin p-3 bg-background-color'>
 
         <div>
           <div className='mt-1 p-1 flex items-center justify-end'>
