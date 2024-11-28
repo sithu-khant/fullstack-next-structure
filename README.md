@@ -9,6 +9,7 @@
 * Thu Nov 28, 2024
   * (11.28.01) - Committed for safety.
   * (11.28.02) - Fixed bug for the width.
+  * (11.28.03) - Added types and interfaces for subscriptions.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.
