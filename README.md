@@ -13,6 +13,7 @@
   * (11.28.04) - Committed for safety to change UI.
   * (11.28.05) - Cleaned codes.
   * (11.28.06) - `SubscriptionsSidebar`.
+  * (11.28.07) - Created `ItemCard` and added items. And cleaned codes.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.

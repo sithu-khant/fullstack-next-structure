@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 
 import { subscriptionsSidebarItems } from '@/constants';
 import { TieredMenu } from 'primereact/tieredmenu';
+import ItemCard from './ItemCard';
 
 const SubscriptionsSidebar = () => {
 
@@ -11,7 +12,7 @@ const SubscriptionsSidebar = () => {
 
   return (
     <>
-      <div className='w-[240px] h-screen overflow-y-scroll scrollbar-thin border border-y-0 border-l-0 p-2'>
+      <div className='w-[20%] h-screen overflow-y-scroll scrollbar-thin p-2 bg-background-color'>
 
         <div className='mt-1 p-1 flex items-center justify-end'>
 
@@ -30,8 +31,24 @@ const SubscriptionsSidebar = () => {
 
         </div>
 
-        <div>
-          Items
+        <div className='mx-2'>
+
+          <p className='text-sm font-semibold text-slate-500 ml-2'>A</p>
+          <ItemCard />
+          <ItemCard />
+
+          <p className='text-sm font-semibold text-slate-500 ml-2'>B</p>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+
+          <p className='text-sm font-semibold text-slate-500 ml-2'>C</p>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+
         </div>
 
       </div>
