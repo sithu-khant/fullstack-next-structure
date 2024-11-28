@@ -1,12 +1,15 @@
 import React, { useRef } from 'react';
 
-import { sidebarItems } from '@/constants';
+import { sidebarMenuItems } from '../utils/menuItems';
 import { TieredMenu } from 'primereact/tieredmenu';
 import ItemCard from './ItemCard';
+import { handleSortItems } from '../utils/handleSort';
 
 const Sidebar = () => {
 
+  const handleSortMenu: any = useRef(null);
   const categorySidebarMenu: any = useRef(null);
+
   const handleTableView = () => { };
   const handleTrash = () => { };
 
@@ -22,17 +25,19 @@ const Sidebar = () => {
           </div>
 
           <div>
-            <TieredMenu model={sidebarItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={handleSortItems({ handleTableView })} popup ref={handleSortMenu} breakpoint="28px" />
             <i
-              className="pi pi-sort-amount-down p-1 pl-2 text-sm text-slate-600 cursor-pointer"
-              onClick={(e) => categorySidebarMenu.current.toggle(e)}
-            ></i>
+              className="pi pi-sort-amount-down sidebar-icon"
+              onClick={(e) => handleSortMenu.current.toggle(e)}
+            >
+            </i>
 
-            <TieredMenu model={sidebarItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={sidebarMenuItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
             <i
-              className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
+              className="pi pi-ellipsis-v sidebar-icon"
               onClick={(e) => categorySidebarMenu.current.toggle(e)}
-            ></i>
+            >
+            </i>
           </div>
 
         </div>

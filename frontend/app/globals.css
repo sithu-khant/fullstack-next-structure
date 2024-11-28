@@ -46,21 +46,9 @@
 
 
 @layer components {
-  .icons-div {
-    @apply flex flex-col items-center;
-  }
 
-  .icon {
-    @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer;
-    /* @apply text-lg text-dark-background p-3 rounded hover:cursor-pointer hover:bg-hover-color; */
-  }
-
-  .active {
-    @apply text-secondary-color;
-  }
-
-  .category-input-field-button {
-    @apply border text-xs rounded px-1 bg-slate-100 text-slate-600;
+  .sidebar-icon {
+    @apply p-1 pl-2 text-sm text-slate-600 cursor-pointer;
   }
 
   .custom-scrollbar {
