@@ -11,6 +11,7 @@ const Sidebar = () => {
   const categorySidebarMenu: any = useRef(null);
 
   const handleTableView = () => { };
+  const handleSearch = () => { };
   const handleTrash = () => { };
 
   return (
@@ -19,7 +20,7 @@ const Sidebar = () => {
 
         <div className='mt-1 p-1 flex items-center justify-end'>
 
-          <div className='flex items-center bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-pointer rounded-md'>
+          <div className='flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-pointer rounded-lg'>
             <i className="pi pi-plus mr-2 text-xs" style={{ fontWeight: "800" }}></i>
             <p className='text-sm'>New Item</p>
           </div>
@@ -28,13 +29,15 @@ const Sidebar = () => {
             <TieredMenu model={handleSortItems({ handleTableView })} popup ref={handleSortMenu} breakpoint="28px" />
             <i
               className="pi pi-sort-amount-down sidebar-icon"
+              style={{ fontWeight: "700" }}
               onClick={(e) => handleSortMenu.current.toggle(e)}
             >
             </i>
 
-            <TieredMenu model={sidebarMenuItems({ handleTableView, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
+            <TieredMenu model={sidebarMenuItems({ handleTableView, handleSearch, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
             <i
               className="pi pi-ellipsis-v sidebar-icon"
+              style={{ fontWeight: "700" }}
               onClick={(e) => categorySidebarMenu.current.toggle(e)}
             >
             </i>

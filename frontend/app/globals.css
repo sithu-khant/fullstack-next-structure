@@ -48,7 +48,7 @@
 @layer components {
 
   .sidebar-icon {
-    @apply p-1 pl-2 text-sm text-slate-600 cursor-pointer;
+    @apply p-2 text-sm text-slate-600 cursor-pointer rounded-lg hover:bg-hover-color;
   }
 
   .custom-scrollbar {

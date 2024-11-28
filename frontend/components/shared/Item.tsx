@@ -4,8 +4,8 @@ import React, { useRef } from 'react';
 import { Knob } from 'primereact/knob';
 import { Chip } from 'primereact/chip';
 
-import { subItemItems } from '@/constants';
 import { TieredMenu } from 'primereact/tieredmenu';
+import { itemMenuItems } from '../utils/menuItems';
 
 const Item = () => {
 
@@ -32,7 +32,7 @@ const Item = () => {
             </div>
 
             <div>
-              <TieredMenu model={subItemItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
+              <TieredMenu model={itemMenuItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
               <i
                 className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
                 onClick={(e) => itemMenu.current.toggle(e)}
