@@ -47,7 +47,7 @@
 
 @layer components {
 
-  .sidebar-icon {
+  .menu-icon {
     @apply p-2 text-sm text-slate-600 cursor-pointer rounded-lg hover:bg-hover-color;
   }
 

@@ -6,6 +6,7 @@ import { Chip } from 'primereact/chip';
 
 import { TieredMenu } from 'primereact/tieredmenu';
 import { itemMenuItems } from '../utils/menuItems';
+import CustomTieredMenu from '../utils/CustomTieredMenu';
 
 const Item = () => {
 
@@ -32,11 +33,14 @@ const Item = () => {
             </div>
 
             <div>
-              <TieredMenu model={itemMenuItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
+              {/* <TieredMenu model={itemMenuItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
               <i
                 className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
                 onClick={(e) => itemMenu.current.toggle(e)}
-              ></i>
+              ></i> */}
+
+              <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
+
             </div>
           </div>
 

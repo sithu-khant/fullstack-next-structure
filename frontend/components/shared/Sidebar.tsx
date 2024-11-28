@@ -4,6 +4,7 @@ import { sidebarMenuItems } from '../utils/menuItems';
 import { TieredMenu } from 'primereact/tieredmenu';
 import ItemCard from './ItemCard';
 import { handleSortItems } from '../utils/handleSort';
+import CustomTieredMenu from '../utils/CustomTieredMenu';
 
 const Sidebar = () => {
 
@@ -16,7 +17,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className='w-[20%] h-screen overflow-y-scroll scrollbar-thin p-2 bg-background-color'>
+      <div className='w-[25%] h-screen overflow-y-scroll scrollbar-thin p-3 bg-background-color'>
 
         <div className='mt-1 p-1 flex items-center justify-end'>
 
@@ -26,21 +27,11 @@ const Sidebar = () => {
           </div>
 
           <div>
-            <TieredMenu model={handleSortItems({ handleTableView })} popup ref={handleSortMenu} breakpoint="28px" />
-            <i
-              className="pi pi-sort-amount-down sidebar-icon"
-              style={{ fontWeight: "700" }}
-              onClick={(e) => handleSortMenu.current.toggle(e)}
-            >
-            </i>
 
-            <TieredMenu model={sidebarMenuItems({ handleTableView, handleSearch, handleTrash })} popup ref={categorySidebarMenu} breakpoint="28px" />
-            <i
-              className="pi pi-ellipsis-v sidebar-icon"
-              style={{ fontWeight: "700" }}
-              onClick={(e) => categorySidebarMenu.current.toggle(e)}
-            >
-            </i>
+            <CustomTieredMenu icon={"pi-sort-amount-down"} model={handleSortItems({ handleTableView })} />
+
+            <CustomTieredMenu icon={"pi-ellipsis-v"} model={sidebarMenuItems({ handleTableView, handleSearch, handleTrash })} />
+
           </div>
 
         </div>
