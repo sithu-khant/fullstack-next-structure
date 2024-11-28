@@ -6,7 +6,7 @@ import { TieredMenu } from 'primereact/tieredmenu';
 import { subItemsSidebarItems } from '@/constants';
 import ItemCard from "./ItemCard";
 
-const ItemsSidebar = () => {
+const ItemsSidebar = ({ clickNewItem, setClickNewItem }: any) => {
 
   const itemsSidebarMenu: any = useRef(null);
 
@@ -15,14 +15,15 @@ const ItemsSidebar = () => {
 
   return (
     <>
-      <div className='w-[400px] h-screen overflow-y-scroll scrollbar-thin border border-y-0 border-l-0 p-2'>
+      <div className='w-[260px] h-screen overflow-y-scroll scrollbar-thin border border-y-0 border-l-0 p-2'>
         <div className='mb-1 p-1 flex items-center justify-between'>
           <p className='font-bold text-slate-600'> 🏠 Category</p>
 
           <div className='flex items-center border rounded'>
-            <TooltipUtils target='.create-category-icon' content='New Item' />
+            <TooltipUtils target='.create-new-item-icon' content='New Item' />
             <i
-              className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"
+              className="create-new-item-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"
+              onClick={() => setClickNewItem(true)}
             >
             </i>
 
