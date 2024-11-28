@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import TooltipUtils from '../utils/TooltipUtils';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { subItemsSidebarItems } from '@/constants';
@@ -20,7 +20,7 @@ const ItemsSidebar = () => {
           <p className='font-bold text-slate-600'> 🏠 Category</p>
 
           <div className='flex items-center border rounded'>
-            <TooltipUtils target='.create-category-icon' content='Create category' />
+            <TooltipUtils target='.create-category-icon' content='New Item' />
             <i
               className="create-category-icon pi pi-plus p-2 text-sm text-slate-500 cursor-pointer"
             >
