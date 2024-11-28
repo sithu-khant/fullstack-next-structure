@@ -2,8 +2,25 @@ export const handleSortItems = ({ handleTableView }: any) => {
 
   return [
     {
-      label: 'Table View',
-      // icon: 'pi pi-table',
+      label: 'Personal',
+      command: () => {
+        handleTableView();
+      }
+    },
+    {
+      label: 'Family',
+      command: () => {
+        handleTableView();
+      }
+    },
+    {
+      label: 'Work',
+      command: () => {
+        handleTableView();
+      }
+    },
+    {
+      label: 'Others',
       command: () => {
         handleTableView();
       }

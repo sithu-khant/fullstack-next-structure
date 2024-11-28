@@ -20,6 +20,7 @@
   * (11.28.11) - Changed hover bg, rouned-lg, and more.
   * (11.28.12) - Added custom `CustomTieredMenu`.
   * (11.28.13) - Styled `CustomTieredMenu`.
+  * (11.28.14) - Started implementing search input field.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.
