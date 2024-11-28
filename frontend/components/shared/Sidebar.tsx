@@ -10,8 +10,9 @@ import Search from '../forms/Search';
 
 const Sidebar = () => {
 
-  const [isSearch, setIsSearch] = useState(false);
   const searchRef = useRef(null);
+  const [isSearch, setIsSearch] = useState(false);
+  const [filteredText, setFilteredText] = useState("");
 
   const handleTableView = () => { };
 
@@ -32,7 +33,7 @@ const Sidebar = () => {
         <div>
           <div className='mt-1 p-1 flex items-center justify-end'>
 
-            <div className='flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-pointer rounded-lg'>
+            <div className='flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-default rounded-lg'>
               <i className="pi pi-plus mr-2 text-xs" style={{ fontWeight: "800" }}></i>
               <p className='text-sm'>New Item</p>
             </div>
@@ -45,7 +46,7 @@ const Sidebar = () => {
           </div>
 
           <div className='mx-2'>
-            {isSearch && <Search ref={searchRef} />}
+            {isSearch && <Search ref={searchRef} filteredText={filteredText} setFilteredText={setFilteredText} setIsSearch={setIsSearch} />}
           </div>
         </div>
 

@@ -9,15 +9,12 @@ const CustomTieredMenu = ({ icon, model }: any) => {
   const menu: any = useRef(null);
   const [isFocus, setIsFocus] = useState(false);
 
-  console.log(isFocus);
-
   return (
     <>
       <TieredMenu
         model={model}
         ref={menu}
         popup
-        breakpoint="28px"
         onFocus={() => { setIsFocus(true) }}
         onHide={() => { setIsFocus(false) }}
       />
