@@ -1,4 +1,4 @@
-# balex
+# recurrify
 
 ## Packages
 
@@ -16,6 +16,7 @@
   * (11.28.07) - Created `ItemCard` and added items. And cleaned codes.
   * (11.28.08) - Cleaned codes.
   * (11.28.09) - Cleaned codes.
+  * (11.28.10) - Removed `landing-pages`.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.
