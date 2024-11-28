@@ -18,7 +18,8 @@
   * (11.28.09) - Cleaned codes.
   * (11.28.10) - Removed `landing-pages`.
   * (11.28.11) - Changed hover bg, rouned-lg, and more.
-  * (11.28.12) - Added custom `CustomTieredmenu`.
+  * (11.28.12) - Added custom `CustomTieredMenu`.
+  * (11.28.13) - Styled `CustomTieredMenu`.
 * Wed Nov 27, 2024
   * (11.27.01) - Used `useClickOutside` hook from Primereact.
   * (11.27.02) - Committed for safety.
