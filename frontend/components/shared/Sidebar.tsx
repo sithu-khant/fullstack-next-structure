@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 import { useClickOutside } from 'primereact/hooks';
+import { useIntersectionObserver } from 'primereact/hooks';
 
 import { sidebarMenuItems } from '../utils/menuItems';
 import ItemCard from './ItemCard';
@@ -10,6 +11,8 @@ import Search from '../forms/Search';
 
 const Sidebar = () => {
 
+  const hrRef = useRef(null);
+  const hrVisible = useIntersectionObserver(hrRef);
   const searchRef = useRef(null);
   const [isSearch, setIsSearch] = useState(false);
   const [filteredText, setFilteredText] = useState("");
@@ -24,14 +27,17 @@ const Sidebar = () => {
 
   useClickOutside(searchRef, () => {
     setIsSearch(false);
+    setFilteredText("");
   });
 
   return (
     <>
-      <div className='w-[280px] h-screen overflow-y-scroll scrollbar-thin p-3 bg-background-color'>
+      <div className='w-[380px] h-screen overflow-y-scroll scrollbar-thin bg-background-color'>
+        <hr className='border-background-color mb-1' ref={hrRef} />
 
-        <div>
-          <div className='mt-1 p-1 flex items-center justify-end'>
+        <div className={`${hrVisible ? "" : "sticky top-0 bg-background-color shadow-sm"}`}>
+
+          <div className='p-1 py-2 flex items-center justify-end'>
 
             <div className='flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-default rounded-lg'>
               <i className="pi pi-plus mr-2 text-xs" style={{ fontWeight: "800" }}></i>
@@ -50,7 +56,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className='mx-2'>
+        <div className='mx-2 p-3'>
 
           <p className='text-sm font-semibold text-slate-500 ml-2'>A</p>
           <ItemCard />

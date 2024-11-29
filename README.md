@@ -6,6 +6,8 @@
 
 ## Logs
 
+* Fri Nov 29, 2024
+  * (11.29.01) - Made navbar sticky at the top when scrolling.
 * Thu Nov 28, 2024
   * (11.28.01) - Committed for safety.
   * (11.28.02) - Fixed bug for the width.

@@ -19,7 +19,7 @@ const Item = () => {
   return (
     <>
       <div className='w-full mx-auto'>
-        <div className='max-w-[800px] md:m-auto p-3'>
+        <div className='max-w-[750px] md:m-auto p-3'>
 
           <div className='flex items-center justify-end m-1 mt-3'>
             <div className='flex items-center hover:bg-slate-50 px-2 py-2 cursor-pointer rounded'>
