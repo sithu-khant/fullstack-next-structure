@@ -1,25 +1,24 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Dialog } from 'primereact/dialog';
 
-const Form = ({ clickForm, setClickForm }: any) => {
+const Form = () => {
 
-  const [visible, setVisible] = useState(false);
+  const [value, setValue] = useState('');
 
   return (
     <>
-      <Dialog
-        header="Header"
-        visible={clickForm}
-        showHeader={false}
-        resizable={false}
-        draggable={false}
-        style={{ width: '50vw' }}
-        onHide={() => { if (!clickForm) return; setClickForm(false); }}
-      >
-        Form
-      </Dialog >
+      <form action="" className=''>
+
+        <div>
+          <label htmlFor={`Name`} className='block text-sm font-medium text-primary-color mb-1'>Name</label>
+          <input
+            id={`Name`}
+            className='input-field'
+          />
+        </div>
+
+      </form>
     </>
   )
 }

@@ -8,7 +8,7 @@ import ItemCard from './ItemCard';
 import { handleSortItems } from '../utils/handleSort';
 import CustomTieredMenu from '../utils/CustomTieredMenu';
 import Search from '../forms/Search';
-import Form from '../forms/Form';
+import FormDialog from '../forms/FormDialog';
 
 const Sidebar = () => {
 
@@ -17,7 +17,7 @@ const Sidebar = () => {
   const searchRef = useRef(null);
   const [isSearch, setIsSearch] = useState(false);
   const [filteredText, setFilteredText] = useState("");
-  const [clickForm, setClickForm] = useState(false);
+  const [clickForm, setClickForm] = useState(true);
 
   const handleTableView = () => { };
 
@@ -49,7 +49,7 @@ const Sidebar = () => {
               <p className='text-sm'>New Item</p>
             </div>
 
-            <Form clickForm={clickForm} setClickForm={setClickForm} />
+            <FormDialog clickForm={clickForm} setClickForm={setClickForm} />
 
             <div>
               <CustomTieredMenu icon={"pi-sort-amount-down"} model={handleSortItems({ handleTableView })} />

@@ -54,6 +54,16 @@
   color: #f4f4f4;
 }
 
+/* Dialog */
+/* .p-dialog	{
+  border-radius: 10px;
+}
+
+.p-dialog-content	{
+  border-radius: 5px;
+  background-color: red;
+} */
+
 
 @layer components {
 
@@ -71,6 +81,10 @@
 
   .search-input-icon {
     @apply absolute text-[8px] top-1/2 right-[10px] transform -translate-y-1/2 rounded-full text-white bg-muted-gray p-1;
+  }
+
+  .input-field {
+    @apply w-full p-1 px-2 rounded-lg bg-input-field-background border border-slate-50;
   }
 
   .subscriptions-item-label {

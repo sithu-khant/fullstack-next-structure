@@ -10,7 +10,7 @@ export interface Subscription {
   plan: string;
   cost: number;
   paymentCurrency: string;
-  website?: string;
-  tags?: string[];
+  website: string;
+  category: string;
   notes?: string;
 }

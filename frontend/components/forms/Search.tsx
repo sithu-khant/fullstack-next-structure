@@ -21,7 +21,7 @@ const Search = ({ ref, filteredText, setFilteredText, setIsSearch }: any) => {
           <input
             type="text"
             value={filteredText}
-            className='w-full p-1 px-2 my-2 rounded-lg text-sm bg-input-field-background border border-slate-50'
+            className='input-field text-sm'
             onChange={handleChange}
             placeholder='Search subscription'
           />
