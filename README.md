@@ -10,6 +10,7 @@
   * (11.29.01) - Made navbar sticky at the top when scrolling.
   * (11.29.02) - Added dialog for form.
   * (11.29.03) - Finished form initialization.
+  * (11.29.04) - Cleaned codes.
 * Thu Nov 28, 2024
   * (11.28.01) - Committed for safety.
   * (11.28.02) - Fixed bug for the width.

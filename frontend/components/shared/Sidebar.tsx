@@ -65,6 +65,11 @@ const Sidebar = () => {
 
         <div className='mx-2 p-3'>
 
+          <p className='text-sm font-semibold text-slate-500 ml-2'>Favorites</p>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+
           <p className='text-sm font-semibold text-slate-500 ml-2'>A</p>
           <ItemCard />
           <ItemCard />

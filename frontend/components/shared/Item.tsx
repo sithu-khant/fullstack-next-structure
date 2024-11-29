@@ -4,9 +4,9 @@ import React, { useRef } from 'react';
 import { Knob } from 'primereact/knob';
 import { Chip } from 'primereact/chip';
 
-import { TieredMenu } from 'primereact/tieredmenu';
 import { itemMenuItems } from '../utils/menuItems';
 import CustomTieredMenu from '../utils/CustomTieredMenu';
+import ItemField from './ItemField';
 
 const Item = () => {
 
@@ -22,22 +22,17 @@ const Item = () => {
         <div className='max-w-[750px] md:m-auto p-3'>
 
           <div className='flex items-center justify-end m-1 mt-3'>
-            <div className='flex items-center hover:bg-slate-50 px-2 py-2 cursor-pointer rounded'>
-              <i className="pi pi-star mr-3 text-sm" style={{ fontWeight: "900" }}></i>
+            <div className='item-menu-button'>
+              <i className="pi pi-star mr-2 text-sm" style={{ fontWeight: "900" }}></i>
               <p className=''>Favorite</p>
             </div>
 
-            <div className='flex items-center hover:bg-slate-50 px-2 py-2 cursor-pointer rounded'>
-              <i className="pi pi-pencil mr-3 text-xs" style={{ fontWeight: "900" }}></i>
+            <div className='item-menu-button'>
+              <i className="pi pi-pencil mr-2 text-xs" style={{ fontWeight: "900" }}></i>
               <p className=''>Edit</p>
             </div>
 
             <div>
-              {/* <TieredMenu model={itemMenuItems({ handleFavorite, handleDelete })} popup ref={itemMenu} breakpoint="28px" />
-              <i
-                className="pi pi-ellipsis-v p-1 pl-2 text-sm text-slate-600 cursor-pointer"
-                onClick={(e) => itemMenu.current.toggle(e)}
-              ></i> */}
 
               <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
 
@@ -63,39 +58,28 @@ const Item = () => {
                 />
 
                 <div>
-                  <p className='subscriptions-item-label'>Day left</p>
-                  <p className='subscriptions-item-value'>365 Days</p>
+                  <ItemField label={`Day Left`} value={`365 Days`} />
                 </div>
               </div>
 
               <div className='mb-3'>
-                <p className='subscriptions-item-label'>Date from</p>
-                <p className='subscriptions-item-value'>Wed Nov 27, 2024</p>
+                <ItemField label={`Date from`} value={`Wed Nov 27, 2024`} />
               </div>
 
               <div className='mb-3'>
-                <p className='subscriptions-item-label'>Date to</p>
-                <p className='subscriptions-item-value'>Wed Nov 27, 2025</p>
+                <ItemField label={`Date to`} value={`Wed Nov 27, 2025`} />
               </div>
 
               <div className='mb-3'>
-                <p className='subscriptions-item-label'>Webiste</p>
-
-                <a href={`https://google.com`} target='_blank' className='subscriptions-item-value text-slate-500'>
-                  https://
-                  <span className='text-primary-color'>google.com</span>
-                </a>
+                <ItemField label={`Webiste`} value={`google.com`} isLink={true} />
               </div>
 
-              <div className='mb-3'>
-                <p className='subscriptions-item-label'>Category</p>
-                <Chip label="🏠 Personal" className='bg-slate-100 text-slate-500 text-xs font-semibold mt-1' />
-              </div>
 
               <div className='mt-8'>
-                <p className='subscriptions-item-label'>Note</p>
-                <p className='subscriptions-item-value'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!</p>
+                <ItemField label={`Note`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
               </div>
+
+
 
               <div className='mt-8 flex items-center'>
                 <i className='pi pi-history mr-1 text-xs text-slate-600' style={{ fontWeight: "800" }}></i>
