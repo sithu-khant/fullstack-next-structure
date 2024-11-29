@@ -84,11 +84,19 @@
   }
 
   .input-field {
-    @apply w-full p-1 px-2 rounded-lg bg-input-field-background border border-slate-50;
+    @apply w-full p-2 rounded-lg bg-input-field-background border border-slate-50;
   }
 
   .item-menu-button {
     @apply flex items-center hover:bg-hover-color text-sm font-medium px-3 py-1 cursor-default rounded-lg;
+  }
+
+  .item-main-container {
+    @apply flex;
+  }
+
+  .item-container {
+    @apply mb-3 flex-[40%];
   }
 
   .item-label {

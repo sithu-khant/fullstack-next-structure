@@ -61,54 +61,75 @@ const Item = () => {
                 </div>
               </div>
 
-              {/* provider */}
-              <div className='mb-3'>
-                <ItemField label={`Provider`} value={`Netflix`} />
+
+              <div className='item-main-container'>
+
+                {/* autoRenew */}
+                <div className='item-container'>
+                  <ItemField label={`Auto Renew`} value={`Yes`} />
+                </div>
+
+                {/* billingCycle */}
+                <div className='item-container'>
+                  <ItemField label={`Billing Cycle`} value={`Monthly`} />
+                </div>
+
               </div>
 
-              {/* Type */}
-              <div className='mb-3'>
-                <ItemField label={`Type`} value={`Streaming`} />
+              <div className='item-main-container'>
+
+                {/* provider */}
+                <div className='item-container'>
+                  <ItemField label={`Provider`} value={`Netflix`} />
+                </div>
+
+                {/* Type */}
+                <div className='item-container'>
+                  <ItemField label={`Type`} value={`Streaming`} />
+                </div>
+
               </div>
 
-              {/* billingCycle */}
-              <div className='mb-3'>
-                <ItemField label={`Billing Cycle`} value={`Monthly`} />
+              <div className='item-main-container'>
+
+                {/* dateFrom */}
+                <div className='item-container'>
+                  <ItemField label={`Date from`} value={`Wed Nov 27, 2024`} />
+                </div>
+
+                {/* dateTo */}
+                <div className='item-container'>
+                  <ItemField label={`Date to`} value={`Wed Nov 27, 2024`} />
+                </div>
+
               </div>
 
-              {/* paymentMethod */}
-              <div className='mb-3'>
-                <ItemField label={`Payment Method`} value={`Credit Card`} />
+              <div className='item-main-container'>
+
+                {/* plan */}
+                <div className='item-container'>
+                  <ItemField label={`Plan`} value={`Standard`} />
+                </div>
+
+                {/* paymentMethod */}
+                <div className='item-container'>
+                  <ItemField label={`Payment Method`} value={`Credit Card`} />
+                </div>
+
               </div>
 
-              {/* dateFrom */}
-              <div className='mb-3'>
-                <ItemField label={`Date from`} value={`Wed Nov 27, 2024`} />
-              </div>
 
-              {/* dateTo */}
-              <div className='mb-3'>
-                <ItemField label={`Date to`} value={`Wed Nov 27, 2024`} />
-              </div>
+              <div className='item-main-container'>
+                {/* cost */}
+                <div className='item-container'>
+                  <ItemField label={`Cost`} value={`15.99`} />
+                </div>
 
-              {/* autoRenew */}
-              <div className='mb-3'>
-                <ItemField label={`Auto Renew`} value={`Yes`} />
-              </div>
+                {/* currency */}
+                <div className='item-container'>
+                  <ItemField label={`Currency`} value={`USD`} />
+                </div>
 
-              {/* plan */}
-              <div className='mb-3'>
-                <ItemField label={`Plan`} value={`Standard`} />
-              </div>
-
-              {/* cost */}
-              <div className='mb-3'>
-                <ItemField label={`Cost`} value={`15.99`} />
-              </div>
-
-              {/* currency */}
-              <div className='mb-3'>
-                <ItemField label={`Currency`} value={`USD`} />
               </div>
 
               {/* website */}
