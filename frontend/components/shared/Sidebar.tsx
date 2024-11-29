@@ -8,6 +8,7 @@ import ItemCard from './ItemCard';
 import { handleSortItems } from '../utils/handleSort';
 import CustomTieredMenu from '../utils/CustomTieredMenu';
 import Search from '../forms/Search';
+import Form from '../forms/Form';
 
 const Sidebar = () => {
 
@@ -16,6 +17,7 @@ const Sidebar = () => {
   const searchRef = useRef(null);
   const [isSearch, setIsSearch] = useState(false);
   const [filteredText, setFilteredText] = useState("");
+  const [clickForm, setClickForm] = useState(false);
 
   const handleTableView = () => { };
 
@@ -39,10 +41,15 @@ const Sidebar = () => {
 
           <div className='p-1 py-2 flex items-center justify-end'>
 
-            <div className='flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-default rounded-lg'>
+            <div
+              className='new-item-button'
+              onClick={() => setClickForm(true)}
+            >
               <i className="pi pi-plus mr-2 text-xs" style={{ fontWeight: "800" }}></i>
               <p className='text-sm'>New Item</p>
             </div>
+
+            <Form clickForm={clickForm} setClickForm={setClickForm} />
 
             <div>
               <CustomTieredMenu icon={"pi-sort-amount-down"} model={handleSortItems({ handleTableView })} />
