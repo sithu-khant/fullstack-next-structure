@@ -6,6 +6,8 @@
 
 ## Logs
 
+* Sat Nov 30, 2024
+  * (11.30.01) - Aligned item title and menu at the same level.
 * Fri Nov 29, 2024
   * (11.29.01) - Made navbar sticky at the top when scrolling.
   * (11.29.02) - Added dialog for form.

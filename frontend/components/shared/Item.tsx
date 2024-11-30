@@ -20,28 +20,30 @@ const Item = () => {
       <div className='w-full mx-auto'>
         <div className='max-w-[750px] md:m-auto p-3'>
 
-          <div className='flex items-center justify-end m-1 mt-3'>
-            <div className='item-menu-button'>
-              <i className="pi pi-star mr-2 text-sm" style={{ fontWeight: "900" }}></i>
-              <p className=''>Favorite</p>
-            </div>
-
-            <div className='item-menu-button'>
-              <i className="pi pi-pencil mr-2 text-xs" style={{ fontWeight: "900" }}></i>
-              <p className=''>Edit</p>
-            </div>
-
+          <div className='flex items-center justify-between my-5 mb-7'>
             <div>
+              <p className='text-xl font-semibold'>🏠 Netflix</p>
+            </div>
 
-              <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
+            <div className='flex items-center'>
+              <div className='item-menu-button'>
+                <i className="pi pi-star mr-2 text-sm" style={{ fontWeight: "900" }}></i>
+                <p className=''>Favorite</p>
+              </div>
 
+              <div className='item-menu-button'>
+                <i className="pi pi-pencil mr-2 text-xs" style={{ fontWeight: "900" }}></i>
+                <p className=''>Edit</p>
+              </div>
+
+              <div>
+                <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
+              </div>
             </div>
           </div>
 
           <div className='max-w-[750px] m-auto'>
-            <div>
-              <p className='text-xl font-semibold mt-1 mb-6'>🏠 Netflix</p>
-            </div>
+
 
             <div>
 
@@ -145,7 +147,7 @@ const Item = () => {
 
               <div className='mt-8 flex items-center'>
                 <i className='pi pi-history mr-1 text-xs text-slate-600' style={{ fontWeight: "800" }}></i>
-                <p className='subscriptions-item-value'>Last edited: Wed Nov 27, 2024</p>
+                <p className='item-value'>Last edited: Wed Nov 27, 2024</p>
               </div>
 
             </div>
