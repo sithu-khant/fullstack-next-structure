@@ -88,3 +88,56 @@ export const subscriptionTypes = [
   'Other'
 ];
 
+export const paymentMethods = [
+  'Credit Card',
+  'Debit Card',
+  'Prepaid Card',
+  'PayPal',
+  'Apple Pay',
+  'Google Pay',
+  'Samsung Pay',
+  'Venmo',
+  'Stripe',
+  'Bank Transfer',
+  'ACH Transfer',
+  'Cryptocurrency',
+  'Bitcoin',
+  'Ethereum',
+  'Gift Card',
+  'Cash on Delivery',
+  'Wire Transfer',
+  'eCheck',
+  'Amazon Pay',
+  'Alipay',
+  'WeChat Pay',
+  'Zelle',
+  'Square',
+  'Klarna',
+  'Afterpay',
+  'Shop Pay',
+  'Braintree',
+  'MasterPass',
+  'Visa Checkout',
+  'Cryptocurrency Wallets',
+  'Buy Now, Pay Later',
+  'Mobile Wallets',
+  'Cash',
+  'Payment Link',
+  'Other'
+];
+
+export const currencyCodes = [
+  'AFN', 'ALL', 'DZD', 'EUR', 'AOA', 'XCD', 'ARS', 'AMD', 'AUD', 'EUR',
+  'AZN', 'BSD', 'BHD', 'BDT', 'BBD', 'BYN', 'EUR', 'BZD', 'XOF', 'BTN',
+  'BOB', 'BAM', 'BWP', 'BRL', 'BND', 'BGN', 'XOF', 'BIF', 'CVE', 'KHR',
+  'CAF', 'CAD', 'CAF', 'CAF', 'CLP', 'CNY', 'COP', 'KMF', 'CAF', 'CDF',
+  'CRC', 'HRK', 'CUP', 'EUR', 'CZK', 'DKK', 'DJF', 'XCD', 'DOP', 'USD',
+  'EGP', 'USD', 'CAF', 'ERN', 'EUR', 'SZL', 'ETB', 'FJD', 'EUR', 'EUR',
+  'CAF', 'GMD', 'GEL', 'EUR', 'GHS', 'EUR', 'XCD', 'GTQ', 'GNF', 'XOF',
+  'GYD', 'HTG', 'HNL', 'HUF', 'ISK', 'INR', 'IDR', 'IRR', 'IQD', 'ILS',
+  'EUR', 'JPY', 'JOD', 'KZT', 'KES', 'AUD', 'KPW', 'KRW', 'KWD', 'KGS',
+  'LAK', 'EUR', 'LBP', 'LSL', 'LRD', 'LYD', 'CHF', 'EUR', 'MGA', 'MWK',
+  'MYR', 'MVR', 'XOF', 'EUR', 'USD', 'MRU', 'MUR', 'MXN', 'USD', 'MDL',
+  'EUR', 'MNT', 'EUR', 'MAD', 'MZN', 'MMK', 'NAD', 'AUD', 'NPR', 'EUR',
+  'NZD', 'NIO', 'XOF', 'NGN', 'MKD', 'NOK'
+];

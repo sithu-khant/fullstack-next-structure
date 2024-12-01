@@ -4,7 +4,7 @@ export interface Subscription {
   type: string;
   billingCycle: string;
   paymentMethod: string;
-  dateFrom: string;
+  dateFrom: string | null;
   dateTo: string | null;
   autoRenew: boolean;
   plan: string;

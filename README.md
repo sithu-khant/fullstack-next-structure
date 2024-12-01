@@ -10,6 +10,7 @@
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.
   * (12.1.03) - Committed for safety.
+  * (12.1.04) - Initialized from inputs with PrimeReact components and hook.
 * Sat Nov 30, 2024
   * (11.30.01) - Aligned item title and menu at the same level.
 * Fri Nov 29, 2024
