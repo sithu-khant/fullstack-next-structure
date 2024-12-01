@@ -29,15 +29,16 @@ const Form = ({ formData, setFormData }: any) => {
             />
           </div>
 
-          <div className='flex justify-between'>
+          <div className='form-fields-container'>
 
             {/* autoRenew */}
-            <div className='flex flex-[50%]'>
+            <div className='flex flex-[50%] items-center'>
+              <p className='form-label mr-2'>Auto Renew</p>
               <InputSwitch
                 checked={formData.autoRenew}
                 onChange={(e) => handleInputChange(e, "autoRenew")}
+                id="autoRenew"
               />
-              <p>Auto Renew</p>
             </div>
 
             {/* billingCycle */}
@@ -54,98 +55,112 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
           </div>
 
-          {/* provider */}
-          <div>
-            <label htmlFor={`provider`} className='form-label'>Provider</label>
-            <input
-              value={formData.provider}
-              onChange={(e) => handleInputChange(e, "provider")}
-              id={`provider`}
-              className='input-field'
-            />
+          <div className='form-fields-container'>
+            {/* provider */}
+            <div>
+              <label htmlFor={`provider`} className='form-label'>Provider</label>
+              <input
+                value={formData.provider}
+                onChange={(e) => handleInputChange(e, "provider")}
+                id={`provider`}
+                className='input-field'
+              />
+            </div>
+
+            {/* type */}
+            <div>
+              <label htmlFor={`type`} className='form-label'>Type</label>
+              <Dropdown
+                value={formData.type}
+                onChange={(e) => handleInputChange(e, "type")}
+                options={subscriptionTypes}
+                optionLabel="type"
+                className="ring-0"
+                filter
+              />
+            </div>
           </div>
 
-          {/* type */}
-          <div>
-            <label htmlFor={`type`} className='form-label'>Type</label>
-            <Dropdown
-              value={formData.type}
-              onChange={(e) => handleInputChange(e, "type")}
-              options={subscriptionTypes}
-              optionLabel="type"
-              className="ring-0"
-              filter
-            />
+          <div className='form-fields-container'>
+
+            {/* dateFrom */}
+            <div>
+              <label htmlFor={`dateFrom`} className='form-label'>Date From</label>
+              <Calendar
+                value={formData.dateFrom}
+                onChange={(e) => handleInputChange(e, "dateFrom")}
+                className='input-field'
+              />
+            </div>
+
+            {/* dateTo */}
+            <div>
+              <label htmlFor={`dateTo`} className='form-label'>Date To</label>
+              <Calendar
+                value={formData.dateTo}
+                onChange={(e) => handleInputChange(e, "dateTo")}
+                className='input-field'
+              />
+            </div>
+
           </div>
 
-          {/* dateFrom */}
-          <div>
-            <label htmlFor={`dateFrom`} className='form-label'>Date From</label>
-            <Calendar
-              value={formData.dateFrom}
-              onChange={(e) => handleInputChange(e, "dateFrom")}
-              className='input-field'
-            />
+          <div className='form-fields-container'>
+
+            {/* plan */}
+            <div>
+              <label htmlFor={`plan`} className='form-label'>Plan</label>
+              <input
+                value={formData.plan}
+                onChange={(e) => handleInputChange(e, "plan")}
+                id={`plan`}
+                className='input-field'
+              />
+            </div>
+
+            {/* paymentMethod */}
+            <div>
+              <label htmlFor={`paymentMethod`} className='form-label'>Payment Method</label>
+              <Dropdown
+                value={formData.paymentMethod}
+                onChange={(e) => handleInputChange(e, "paymentMethod")}
+                options={paymentMethods}
+                optionLabel="type"
+                className="ring-0"
+                filter
+              />
+            </div>
+
           </div>
 
-          {/* dateTo */}
-          <div>
-            <label htmlFor={`dateTo`} className='form-label'>Date To</label>
-            <Calendar
-              value={formData.dateTo}
-              onChange={(e) => handleInputChange(e, "dateTo")}
-              className='input-field'
-            />
-          </div>
+          <div className='form-fields-container'>
 
-          {/* plan */}
-          <div>
-            <label htmlFor={`plan`} className='form-label'>Plan</label>
-            <input
-              value={formData.plan}
-              onChange={(e) => handleInputChange(e, "plan")}
-              id={`plan`}
-              className='input-field'
-            />
-          </div>
+            {/* cost */}
+            <div>
+              <label htmlFor={`cost`} className='form-label'>Cost</label>
+              <input
+                value={formData.cost}
+                onChange={(e) => handleInputChange(e, "cost")}
+                id={`cost`}
+                className='input-field'
+                type='number'
+              />
+            </div>
 
-          {/* paymentMethod */}
-          <div>
-            <label htmlFor={`paymentMethod`} className='form-label'>Payment Method</label>
-            <Dropdown
-              value={formData.paymentMethod}
-              onChange={(e) => handleInputChange(e, "paymentMethod")}
-              options={paymentMethods}
-              optionLabel="type"
-              className="ring-0"
-              filter
-            />
-          </div>
+            {/* currency */}
+            <div>
+              <label htmlFor={`Name`} className='form-label'>Currency</label>
 
-          {/* cost */}
-          <div>
-            <label htmlFor={`cost`} className='form-label'>Cost</label>
-            <input
-              value={formData.cost}
-              onChange={(e) => handleInputChange(e, "cost")}
-              id={`cost`}
-              className='input-field'
-              type='number'
-            />
-          </div>
+              <Dropdown
+                value={formData.currency}
+                onChange={(e) => handleInputChange(e, "currency")}
+                options={currencyCodes}
+                optionLabel="currency"
+                className="ring-0"
+                filter
+              />
+            </div>
 
-          {/* currency */}
-          <div>
-            <label htmlFor={`Name`} className='form-label'>Currency</label>
-
-            <Dropdown
-              value={formData.currency}
-              onChange={(e) => handleInputChange(e, "currency")}
-              options={currencyCodes}
-              optionLabel="currency"
-              className="ring-0"
-              filter
-            />
           </div>
 
           {/* website */}

@@ -13,6 +13,7 @@
   * (12.1.04) - Initialized from inputs with PrimeReact components and hook.
   * (12.1.05) - Started styling dropdown.
   * (12.1.06) - Styled dropdown.
+  * (12.1.07) - Committed for safety.
 * Sat Nov 30, 2024
   * (11.30.01) - Aligned item title and menu at the same level.
 * Fri Nov 29, 2024

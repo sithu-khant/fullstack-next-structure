@@ -90,10 +90,6 @@
   background-color: #e2f1ff;
 }
 
-.p-icon {
-  display: none;
-}
-
 @layer components {
 
   .custom-scrollbar {
@@ -141,5 +137,9 @@
   /* Form */
   .form-label {
     @apply block text-sm font-medium text-primary-color mb-1;
+  }
+
+  .form-fields-container {
+    @apply flex justify-between items-center mt-3;
   }
 }
