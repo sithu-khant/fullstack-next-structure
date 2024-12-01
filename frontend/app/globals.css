@@ -69,7 +69,7 @@
   width: 100%;
   border-radius: 8px;
   border: 1px solid #f8fafc;
-  padding: 0;
+  padding: 2px;
 }
 
 .p-dropdown-label	{
@@ -84,6 +84,14 @@
 .p-dropdown-item	{
   padding: 8px;
   font-size: 14px;
+}
+
+.p-dropdown-item:hover {
+  background-color: #e2f1ff;
+}
+
+.p-icon {
+  display: none;
 }
 
 @layer components {

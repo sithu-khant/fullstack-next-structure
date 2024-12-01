@@ -48,7 +48,7 @@ const Form = ({ formData, setFormData }: any) => {
                 onChange={(e) => handleInputChange(e, "billingCycle")}
                 options={billingCycles}
                 optionLabel="billingCycle"
-                className=""
+                className="ring-0"
                 filter
               />
             </div>
@@ -73,7 +73,7 @@ const Form = ({ formData, setFormData }: any) => {
               onChange={(e) => handleInputChange(e, "type")}
               options={subscriptionTypes}
               optionLabel="type"
-              className="w-full md:w-14rem"
+              className="ring-0"
               filter
             />
           </div>
@@ -117,7 +117,7 @@ const Form = ({ formData, setFormData }: any) => {
               onChange={(e) => handleInputChange(e, "paymentMethod")}
               options={paymentMethods}
               optionLabel="type"
-              className="w-full md:w-14rem"
+              className="ring-0"
               filter
             />
           </div>
@@ -143,7 +143,7 @@ const Form = ({ formData, setFormData }: any) => {
               onChange={(e) => handleInputChange(e, "currency")}
               options={currencyCodes}
               optionLabel="currency"
-              className="w-full md:w-14rem"
+              className="ring-0"
               filter
             />
           </div>
