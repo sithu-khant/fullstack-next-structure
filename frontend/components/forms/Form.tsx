@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { InputSwitch } from "primereact/inputswitch";
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
-import { InputNumber } from 'primereact/inputnumber';
 
 import { billingCycles, currencyCodes, paymentMethods, subscriptionTypes } from '@/constants';
 
@@ -30,26 +29,29 @@ const Form = ({ formData, setFormData }: any) => {
             />
           </div>
 
-          {/* autoRenew */}
-          <div className='flex'>
-            <InputSwitch
-              checked={formData.autoRenew}
-              onChange={(e) => handleInputChange(e, "autoRenew")}
-            />
-            <p>Auto Renew</p>
-          </div>
+          <div className='flex justify-between'>
 
-          {/* billingCycle */}
-          <div>
-            <label htmlFor={`billingCycle`} className='form-label'>Billing Cycle</label>
-            <Dropdown
-              value={formData.billingCycle}
-              onChange={(e) => handleInputChange(e, "billingCycle")}
-              options={billingCycles}
-              optionLabel="billingCycle"
-              className="w-full md:w-14rem"
-              filter
-            />
+            {/* autoRenew */}
+            <div className='flex flex-[50%]'>
+              <InputSwitch
+                checked={formData.autoRenew}
+                onChange={(e) => handleInputChange(e, "autoRenew")}
+              />
+              <p>Auto Renew</p>
+            </div>
+
+            {/* billingCycle */}
+            <div className='flex-[50%]'>
+              <label htmlFor={`billingCycle`} className='form-label'>Billing Cycle</label>
+              <Dropdown
+                value={formData.billingCycle}
+                onChange={(e) => handleInputChange(e, "billingCycle")}
+                options={billingCycles}
+                optionLabel="billingCycle"
+                className=""
+                filter
+              />
+            </div>
           </div>
 
           {/* provider */}

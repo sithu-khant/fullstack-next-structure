@@ -63,6 +63,28 @@
   border-radius: 5px;
 }
 
+/* Inputs */
+.p-dropdown	{
+  background-color: #e5e7eb;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #f8fafc;
+  padding: 0;
+}
+
+.p-dropdown-label	{
+  padding: 8px;
+  font-size: 14px;
+}
+
+.p-dropdown-items	{
+  padding: 0;
+}
+
+.p-dropdown-item	{
+  padding: 8px;
+  font-size: 14px;
+}
 
 @layer components {
 
