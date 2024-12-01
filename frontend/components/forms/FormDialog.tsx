@@ -1,10 +1,30 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import Form from './Form';
+import { Subscription } from '@/constants/types';
+
+const defaultFormData: Subscription = {
+  name: "",
+  provider: "",
+  type: "",
+  billingCycle: "",
+  paymentMethod: "",
+  dateFrom: "",
+  dateTo: "",
+  autoRenew: true,
+  plan: "",
+  cost: 0,
+  currency: "",
+  website: "",
+  category: "",
+  notes: "",
+};
 
 const FormDialog = ({ clickForm, setClickForm }: any) => {
+
+  const [formData, setFormData] = useState(defaultFormData);
 
   return (
     <>
@@ -17,7 +37,7 @@ const FormDialog = ({ clickForm, setClickForm }: any) => {
         visible={clickForm}
         onHide={() => { if (!clickForm) return; setClickForm(false); }}
       >
-        <Form />
+        <Form formData={formData} setFormData={setFormData} />
       </Dialog >
     </>
   )

@@ -8,6 +8,7 @@
 
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
+  * (12.1.02) - Initialized form values.
 * Sat Nov 30, 2024
   * (11.30.01) - Aligned item title and menu at the same level.
 * Fri Nov 29, 2024

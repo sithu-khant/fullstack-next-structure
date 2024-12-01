@@ -2,9 +2,7 @@
 
 import React, { useState } from 'react';
 
-const Form = () => {
-
-  const [value, setValue] = useState('');
+const Form = ({ formData, setFormData }: any) => {
 
   return (
     <>
