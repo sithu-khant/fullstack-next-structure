@@ -85,7 +85,7 @@ const Item = () => {
                   <ItemField label={`Provider`} value={`Netflix`} />
                 </div>
 
-                {/* Type */}
+                {/* type */}
                 <div className='item-container'>
                   <ItemField label={`Type`} value={`Streaming`} />
                 </div>
