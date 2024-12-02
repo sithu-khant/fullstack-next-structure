@@ -187,6 +187,9 @@ const Form = ({ formData, setFormData }: any) => {
             </textarea>
           </div>
 
+          {/* Buttons */}
+
+
         </div>
 
       </form>

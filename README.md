@@ -14,6 +14,7 @@
   * (12.2.05) - Added account and support button to sidebar menu.
   * (12.2.06) - Removed max-width for item component.
   * (12.2.07) - Updated new item button and font size of icons.
+  * (12.2.08) - Added save button in form.
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.
