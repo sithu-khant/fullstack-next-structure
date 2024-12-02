@@ -18,8 +18,8 @@ const Item = () => {
   return (
     <>
       <div className='w-full h-screen overflow-y-scroll scrollbar-thin'>
-        <div className='w-full mx-auto'>
-          <div className='max-w-[750px] md:m-auto p-3'>
+        <div className='w-full px-10 mx-auto'>
+          <div className=' md:m-auto p-3'>
 
             <div className='sticky top-0 bg-white flex items-center justify-between '>
               <div>
@@ -43,8 +43,7 @@ const Item = () => {
               </div>
             </div>
 
-            <div className='max-w-[750px] m-auto'>
-
+            <div className='m-auto'>
 
               <div>
 

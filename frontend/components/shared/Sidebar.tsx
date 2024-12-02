@@ -34,7 +34,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className='w-[380px] h-screen overflow-y-scroll scrollbar-thin bg-background-color'>
+      <div className='w-[480px] h-screen overflow-y-scroll scrollbar-thin bg-background-color'>
         <hr className='border-background-color mb-1' ref={hrRef} />
 
         <div className={`${hrVisible ? "" : "sticky top-0 bg-background-color shadow-sm"}`}>
