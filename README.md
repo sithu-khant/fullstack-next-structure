@@ -9,7 +9,8 @@
 * Mon Dec 2, 2024
   * (12.2.01) - Styled form input fields.
   * (12.2.02) - Item screen size.
-  * (12.3.03) - Made item title sticky.
+  * (12.2.03) - Made item title sticky.
+  * (12.2.04) - Cleaned code.
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.
