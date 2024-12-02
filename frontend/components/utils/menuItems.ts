@@ -1,20 +1,6 @@
-export const sidebarMenuItems = ({ handleTableView, handleSearch, handleTrash }: any) => {
+export const sidebarMenuItems = ({ handleTrash }: any) => {
 
   return [
-    {
-      label: 'Table View',
-      icon: 'pi pi-table',
-      command: () => {
-        handleTableView();
-      }
-    },
-    {
-      label: 'Search',
-      icon: 'pi pi-search',
-      command: () => {
-        handleSearch();
-      }
-    },
     {
       label: 'Trash',
       icon: 'pi pi-trash',

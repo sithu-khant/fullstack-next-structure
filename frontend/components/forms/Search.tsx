@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ ref, filteredText, setFilteredText, setIsSearch }: any) => {
+const Search = ({ ref, filteredText, setFilteredText, isSearching, setIsSearching }: any) => {
 
   const handleChange = (e: any) => {
 
@@ -11,7 +11,7 @@ const Search = ({ ref, filteredText, setFilteredText, setIsSearch }: any) => {
   const handleClear = () => {
 
     setFilteredText("");
-    setIsSearch(false);
+    setIsSearching(!isSearching);
   }
 
   return (
@@ -23,7 +23,7 @@ const Search = ({ ref, filteredText, setFilteredText, setIsSearch }: any) => {
             value={filteredText}
             className='input-field text-sm'
             onChange={handleChange}
-            placeholder='Search subscription'
+            placeholder='Search subscriptions'
           />
 
           <i

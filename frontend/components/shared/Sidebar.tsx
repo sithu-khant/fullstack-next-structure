@@ -5,7 +5,6 @@ import { useIntersectionObserver } from 'primereact/hooks';
 
 import { sidebarMenuItems } from '../utils/menuItems';
 import ItemCard from './ItemCard';
-import { handleSortItems } from '../utils/handleSort';
 import CustomTieredMenu from '../utils/CustomTieredMenu';
 import Search from '../forms/Search';
 import FormDialog from '../forms/FormDialog';
@@ -15,20 +14,14 @@ const Sidebar = () => {
   const hrRef = useRef(null);
   const hrVisible = useIntersectionObserver(hrRef);
   const searchRef = useRef(null);
-  const [isSearch, setIsSearch] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const [filteredText, setFilteredText] = useState("");
-  const [clickForm, setClickForm] = useState(true);
-
-  const handleTableView = () => { };
-
-  const handleSearch = () => {
-    setIsSearch(!isSearch);
-  };
+  const [clickForm, setClickForm] = useState(false);
 
   const handleTrash = () => { };
 
   useClickOutside(searchRef, () => {
-    setIsSearch(false);
+    setIsSearching(false);
     setFilteredText("");
   });
 
@@ -52,14 +45,27 @@ const Sidebar = () => {
             <FormDialog clickForm={clickForm} setClickForm={setClickForm} />
 
             <div>
-              <CustomTieredMenu icon={"pi-sort-amount-down"} model={handleSortItems({ handleTableView })} />
-              <CustomTieredMenu icon={"pi-ellipsis-v"} model={sidebarMenuItems({ handleTableView, handleSearch, handleTrash })} />
+              <i
+                className={`pi pi-search menu-icon ${isSearching && "bg-hover-color"}`}
+                style={{ fontWeight: "800" }}
+                onClick={() => { setIsSearching(true) }}
+              >
+              </i>
+              <CustomTieredMenu icon={"pi-ellipsis-v"} model={sidebarMenuItems({ handleTrash })} />
             </div>
 
           </div>
 
           <div className='mx-2'>
-            {isSearch && <Search ref={searchRef} filteredText={filteredText} setFilteredText={setFilteredText} setIsSearch={setIsSearch} />}
+            {isSearching && (
+              <Search
+                ref={searchRef}
+                filteredText={filteredText}
+                setFilteredText={setFilteredText}
+                isSearching={isSearching}
+                setIsSearching={setIsSearching}
+              />
+            )}
           </div>
         </div>
 
@@ -88,7 +94,7 @@ const Sidebar = () => {
 
         </div>
 
-      </div>
+      </div >
     </>
   )
 }

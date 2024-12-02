@@ -16,6 +16,7 @@
   * (12.2.07) - Updated new item button and font size of icons.
   * (12.2.08) - Added save button in form.
   * (12.2.09) - Added form save button and fixed bug for submission.
+  * (12.2.10) - Finished search UI.
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.
