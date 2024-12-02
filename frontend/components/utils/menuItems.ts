@@ -21,6 +21,20 @@ export const sidebarMenuItems = ({ handleTableView, handleSearch, handleTrash }:
       command: () => {
         handleTrash();
       }
+    },
+    {
+      label: 'Account',
+      icon: 'pi pi-user',
+      command: () => {
+        handleTrash();
+      }
+    },
+    {
+      label: 'Support',
+      icon: 'pi pi-info-circle',
+      command: () => {
+        handleTrash();
+      }
     }
   ]
 }

@@ -11,6 +11,7 @@
   * (12.2.02) - Item screen size.
   * (12.2.03) - Made item title sticky.
   * (12.2.04) - Cleaned code.
+  * (12.2.05) - Added account and support button to sidebar menu.
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.
