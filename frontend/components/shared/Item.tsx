@@ -21,9 +21,9 @@ const Item = () => {
         <div className='w-full mx-auto'>
           <div className='max-w-[750px] md:m-auto p-3'>
 
-            <div className='flex items-center justify-between my-5 mb-7'>
+            <div className='sticky top-0 bg-white flex items-center justify-between '>
               <div>
-                <p className='text-xl font-semibold'>🏠 Netflix</p>
+                <p className='text-xl font-semibold my-5 mb-7'>🏠 Netflix</p>
               </div>
 
               <div className='flex items-center'>
