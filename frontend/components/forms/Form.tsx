@@ -11,7 +11,8 @@ const Form = ({ formData, setFormData }: any) => {
 
   const handleInputChange = (e: any, field: string) => {
     e.preventDefault();
-    setFormData({ ...formData, [field]: e.value });
+
+    setFormData({ ...formData, [field]: e.target.value });
   }
 
   return (
@@ -22,10 +23,11 @@ const Form = ({ formData, setFormData }: any) => {
 
           {/* name */}
           <div>
-            <label htmlFor={`Name`} className='form-label'>Name</label>
+            <label htmlFor={`name`} className='form-label'>Name</label>
             <input
-              id={`Name`}
+              id={`name`}
               className='input-field'
+              onChange={(e) => handleInputChange(e, "name")}
             />
           </div>
 
