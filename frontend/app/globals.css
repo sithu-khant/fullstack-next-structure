@@ -103,11 +103,11 @@
 
   /* Sidebar */
   .new-item-button {
-    @apply flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-1 cursor-default rounded-lg;
+    @apply flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-2 cursor-default rounded-lg;
   }
 
   .menu-icon {
-    @apply p-2 text-sm text-slate-600 rounded-lg hover:bg-hover-color;
+    @apply p-2 text-slate-600 rounded-lg hover:bg-hover-color;
   }
 
   .search-input-icon {
