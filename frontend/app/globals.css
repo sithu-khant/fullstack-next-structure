@@ -90,6 +90,11 @@
   background-color: #e2f1ff;
 }
 
+.p-inputtext {
+  background-color: #e5e7eb;
+  box-shadow: none;
+}
+
 @layer components {
 
   .custom-scrollbar {
@@ -141,5 +146,9 @@
 
   .form-fields-container {
     @apply flex justify-between items-center mt-3;
+  }
+
+  .form-field-container {
+    @apply basis-[48%];
   }
 }

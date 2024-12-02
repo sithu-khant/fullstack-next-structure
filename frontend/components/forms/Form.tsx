@@ -32,7 +32,7 @@ const Form = ({ formData, setFormData }: any) => {
           <div className='form-fields-container'>
 
             {/* autoRenew */}
-            <div className='flex flex-[50%] items-center'>
+            <div className='form-field-container flex items-center'>
               <p className='form-label mr-2'>Auto Renew</p>
               <InputSwitch
                 checked={formData.autoRenew}
@@ -42,7 +42,7 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
 
             {/* billingCycle */}
-            <div className='flex-[50%]'>
+            <div className='form-field-container'>
               <label htmlFor={`billingCycle`} className='form-label'>Billing Cycle</label>
               <Dropdown
                 value={formData.billingCycle}
@@ -57,7 +57,7 @@ const Form = ({ formData, setFormData }: any) => {
 
           <div className='form-fields-container'>
             {/* provider */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`provider`} className='form-label'>Provider</label>
               <input
                 value={formData.provider}
@@ -68,7 +68,7 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
 
             {/* type */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`type`} className='form-label'>Type</label>
               <Dropdown
                 value={formData.type}
@@ -84,7 +84,7 @@ const Form = ({ formData, setFormData }: any) => {
           <div className='form-fields-container'>
 
             {/* dateFrom */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`dateFrom`} className='form-label'>Date From</label>
               <Calendar
                 value={formData.dateFrom}
@@ -94,7 +94,7 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
 
             {/* dateTo */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`dateTo`} className='form-label'>Date To</label>
               <Calendar
                 value={formData.dateTo}
@@ -108,7 +108,7 @@ const Form = ({ formData, setFormData }: any) => {
           <div className='form-fields-container'>
 
             {/* plan */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`plan`} className='form-label'>Plan</label>
               <input
                 value={formData.plan}
@@ -119,7 +119,7 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
 
             {/* paymentMethod */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`paymentMethod`} className='form-label'>Payment Method</label>
               <Dropdown
                 value={formData.paymentMethod}
@@ -136,7 +136,7 @@ const Form = ({ formData, setFormData }: any) => {
           <div className='form-fields-container'>
 
             {/* cost */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`cost`} className='form-label'>Cost</label>
               <input
                 value={formData.cost}
@@ -148,7 +148,7 @@ const Form = ({ formData, setFormData }: any) => {
             </div>
 
             {/* currency */}
-            <div>
+            <div className='form-field-container'>
               <label htmlFor={`Name`} className='form-label'>Currency</label>
 
               <Dropdown
@@ -164,7 +164,7 @@ const Form = ({ formData, setFormData }: any) => {
           </div>
 
           {/* website */}
-          <div>
+          <div className='mt-2'>
             <label htmlFor={`website`} className='form-label'>Website</label>
             <input
               value={formData.website}
@@ -175,13 +175,14 @@ const Form = ({ formData, setFormData }: any) => {
           </div>
 
           {/* notes */}
-          <div>
+          <div className='mt-2'>
             <label htmlFor={`notes`} className='form-label'>Notes</label>
             <textarea
               value={formData.notes}
               onChange={(e) => handleInputChange(e, "notes")}
               id={`notes`}
               className='input-field'
+              rows={8}
             >
             </textarea>
           </div>

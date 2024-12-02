@@ -127,7 +127,7 @@ export const paymentMethods = [
 ];
 
 export const currencyCodes = [
-  'AFN', 'ALL', 'DZD', 'EUR', 'AOA', 'XCD', 'ARS', 'AMD', 'AUD', 'EUR',
+  'USD', 'ALL', 'DZD', 'EUR', 'AOA', 'XCD', 'ARS', 'AMD', 'AUD', 'EUR',
   'AZN', 'BSD', 'BHD', 'BDT', 'BBD', 'BYN', 'EUR', 'BZD', 'XOF', 'BTN',
   'BOB', 'BAM', 'BWP', 'BRL', 'BND', 'BGN', 'XOF', 'BIF', 'CVE', 'KHR',
   'CAF', 'CAD', 'CAF', 'CAF', 'CLP', 'CNY', 'COP', 'KMF', 'CAF', 'CDF',
@@ -139,5 +139,5 @@ export const currencyCodes = [
   'LAK', 'EUR', 'LBP', 'LSL', 'LRD', 'LYD', 'CHF', 'EUR', 'MGA', 'MWK',
   'MYR', 'MVR', 'XOF', 'EUR', 'USD', 'MRU', 'MUR', 'MXN', 'USD', 'MDL',
   'EUR', 'MNT', 'EUR', 'MAD', 'MZN', 'MMK', 'NAD', 'AUD', 'NPR', 'EUR',
-  'NZD', 'NIO', 'XOF', 'NGN', 'MKD', 'NOK'
+  'NZD', 'NIO', 'XOF', 'NGN', 'MKD', 'NOK', 'OTHER'
 ];
