@@ -103,7 +103,7 @@
 
   /* Sidebar */
   .new-item-button {
-    @apply flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-2 cursor-default rounded-lg;
+    @apply flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-2 cursor-default rounded-lg selection:bg-transparent;
   }
 
   .menu-icon {
@@ -120,7 +120,7 @@
 
   /* Item */
   .item-menu-button {
-    @apply flex items-center hover:bg-hover-color text-sm font-medium px-3 py-1 cursor-default rounded-lg;
+    @apply flex items-center hover:bg-hover-color text-sm font-medium px-3 py-2 cursor-default rounded-lg selection:bg-transparent;
   }
 
   .item-main-container {

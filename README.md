@@ -17,6 +17,7 @@
   * (12.2.08) - Added save button in form.
   * (12.2.09) - Added form save button and fixed bug for submission.
   * (12.2.10) - Finished search UI.
+  * (12.2.11) - Cleaned codes.
 * Sun Dec 1, 2024
   * (12.1.01) - Initialized form inputs.
   * (12.1.02) - Initialized form values.

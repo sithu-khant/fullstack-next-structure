@@ -3,8 +3,6 @@
 import React, { useRef } from 'react';
 import { Knob } from 'primereact/knob';
 
-import { itemMenuItems } from '../utils/menuItems';
-import CustomTieredMenu from '../utils/CustomTieredMenu';
 import ItemField from './ItemField';
 
 const Item = () => {
@@ -37,8 +35,9 @@ const Item = () => {
                   <p className=''>Edit</p>
                 </div>
 
-                <div>
-                  <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
+                <div className='item-menu-button'>
+                  <i className="pi pi-trash mr-2 text-xs" style={{ fontWeight: "900" }}></i>
+                  <p className=''>Delete</p>
                 </div>
               </div>
             </div>

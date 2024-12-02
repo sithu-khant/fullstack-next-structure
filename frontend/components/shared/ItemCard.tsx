@@ -5,7 +5,7 @@ const ItemCard = () => {
     <>
       <div className='my-1 p-2 hover:bg-hover-color rounded-lg flex items-center'>
         <div className='mr-1 w-[35px] h-[35px] flex justify-center items-center bg-input-field-background rounded'>
-          <p className="rounded">🏠</p>
+          <p className="rounded selection:bg-transparent">🏠</p>
         </div>
         <div className='ml-1'>
           <p className=''>Namecheap</p>
