@@ -17,7 +17,7 @@ const Sidebar = () => {
   const searchRef = useRef(null);
   const [isSearch, setIsSearch] = useState(false);
   const [filteredText, setFilteredText] = useState("");
-  const [clickForm, setClickForm] = useState(true);
+  const [clickForm, setClickForm] = useState(false);
 
   const handleTableView = () => { };
 

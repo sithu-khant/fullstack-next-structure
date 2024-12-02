@@ -17,141 +17,143 @@ const Item = () => {
 
   return (
     <>
-      <div className='w-full mx-auto'>
-        <div className='max-w-[750px] md:m-auto p-3'>
+      <div className='w-full h-screen overflow-y-scroll scrollbar-thin'>
+        <div className='w-full mx-auto'>
+          <div className='max-w-[750px] md:m-auto p-3'>
 
-          <div className='flex items-center justify-between my-5 mb-7'>
-            <div>
-              <p className='text-xl font-semibold'>🏠 Netflix</p>
-            </div>
-
-            <div className='flex items-center'>
-              <div className='item-menu-button'>
-                <i className="pi pi-star mr-2 text-sm" style={{ fontWeight: "900" }}></i>
-                <p className=''>Favorite</p>
-              </div>
-
-              <div className='item-menu-button'>
-                <i className="pi pi-pencil mr-2 text-xs" style={{ fontWeight: "900" }}></i>
-                <p className=''>Edit</p>
-              </div>
-
+            <div className='flex items-center justify-between my-5 mb-7'>
               <div>
-                <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
+                <p className='text-xl font-semibold'>🏠 Netflix</p>
               </div>
-            </div>
-          </div>
 
-          <div className='max-w-[750px] m-auto'>
+              <div className='flex items-center'>
+                <div className='item-menu-button'>
+                  <i className="pi pi-star mr-2 text-sm" style={{ fontWeight: "900" }}></i>
+                  <p className=''>Favorite</p>
+                </div>
 
-
-            <div>
-
-              <div className='mb-3 flex items-center'>
-
-                <Knob
-                  value={55}
-                  showValue={false}
-                  valueColor={"#0056d6"}
-                  size={30}
-                  strokeWidth={18}
-                  className='mr-3'
-                />
+                <div className='item-menu-button'>
+                  <i className="pi pi-pencil mr-2 text-xs" style={{ fontWeight: "900" }}></i>
+                  <p className=''>Edit</p>
+                </div>
 
                 <div>
-                  <ItemField label={`Day Left`} value={`365 Days`} />
+                  <CustomTieredMenu icon={"pi-ellipsis-v"} model={itemMenuItems({ handleFavorite, handleDelete })} />
                 </div>
               </div>
+            </div>
+
+            <div className='max-w-[750px] m-auto'>
 
 
-              <div className='item-main-container'>
+              <div>
 
-                {/* autoRenew */}
-                <div className='item-container'>
-                  <ItemField label={`Auto Renew`} value={`Yes`} />
+                <div className='mb-3 flex items-center'>
+                  <Knob
+                    value={55}
+                    showValue={false}
+                    valueColor={"#0056d6"}
+                    size={30}
+                    strokeWidth={18}
+                    className='mr-3'
+                  />
+
+                  <div>
+                    <ItemField label={`Day Left`} value={`365 Days`} />
+                  </div>
                 </div>
 
-                {/* billingCycle */}
-                <div className='item-container'>
-                  <ItemField label={`Billing Cycle`} value={`Monthly`} />
+
+                <div className='item-main-container'>
+                  {/* autoRenew */}
+                  <div className='item-container'>
+                    <ItemField label={`Auto Renew`} value={`Yes`} />
+                  </div>
+
+                  {/* billingCycle */}
+                  <div className='item-container'>
+                    <ItemField label={`Billing Cycle`} value={`Monthly`} />
+                  </div>
                 </div>
 
-              </div>
+                <div className='item-main-container'>
+                  {/* provider */}
+                  <div className='item-container'>
+                    <ItemField label={`Provider`} value={`Netflix`} />
+                  </div>
 
-              <div className='item-main-container'>
-
-                {/* provider */}
-                <div className='item-container'>
-                  <ItemField label={`Provider`} value={`Netflix`} />
+                  {/* type */}
+                  <div className='item-container'>
+                    <ItemField label={`Type`} value={`Streaming`} />
+                  </div>
                 </div>
 
-                {/* type */}
-                <div className='item-container'>
-                  <ItemField label={`Type`} value={`Streaming`} />
+                <div className='item-main-container'>
+                  {/* dateFrom */}
+                  <div className='item-container'>
+                    <ItemField label={`Date from`} value={`Wed Nov 27, 2024`} />
+                  </div>
+
+                  {/* dateTo */}
+                  <div className='item-container'>
+                    <ItemField label={`Date to`} value={`Wed Nov 27, 2024`} />
+                  </div>
                 </div>
 
-              </div>
+                <div className='item-main-container'>
+                  {/* plan */}
+                  <div className='item-container'>
+                    <ItemField label={`Plan`} value={`Standard`} />
+                  </div>
 
-              <div className='item-main-container'>
-
-                {/* dateFrom */}
-                <div className='item-container'>
-                  <ItemField label={`Date from`} value={`Wed Nov 27, 2024`} />
+                  {/* paymentMethod */}
+                  <div className='item-container'>
+                    <ItemField label={`Payment Method`} value={`Credit Card`} />
+                  </div>
                 </div>
 
-                {/* dateTo */}
-                <div className='item-container'>
-                  <ItemField label={`Date to`} value={`Wed Nov 27, 2024`} />
+
+                <div className='item-main-container'>
+                  {/* cost */}
+                  <div className='item-container'>
+                    <ItemField label={`Cost`} value={`15.99`} />
+                  </div>
+
+                  {/* currency */}
+                  <div className='item-container'>
+                    <ItemField label={`Currency`} value={`USD`} />
+                  </div>
                 </div>
 
-              </div>
-
-              <div className='item-main-container'>
-
-                {/* plan */}
-                <div className='item-container'>
-                  <ItemField label={`Plan`} value={`Standard`} />
+                {/* website */}
+                <div className='mb-3'>
+                  <ItemField label={`Webiste`} value={`google.com`} isLink={true} />
                 </div>
 
-                {/* paymentMethod */}
-                <div className='item-container'>
-                  <ItemField label={`Payment Method`} value={`Credit Card`} />
+
+                {/* notes */}
+                <div className='mt-8'>
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
+                  <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
                 </div>
 
-              </div>
-
-
-              <div className='item-main-container'>
-                {/* cost */}
-                <div className='item-container'>
-                  <ItemField label={`Cost`} value={`15.99`} />
+                <div className='my-8 flex items-center'>
+                  <i className='pi pi-history mr-1 text-xs text-slate-600' style={{ fontWeight: "800" }}></i>
+                  <p className='item-value'>Last edited: Wed Nov 27, 2024</p>
                 </div>
 
-                {/* currency */}
-                <div className='item-container'>
-                  <ItemField label={`Currency`} value={`USD`} />
-                </div>
-
-              </div>
-
-              {/* website */}
-              <div className='mb-3'>
-                <ItemField label={`Webiste`} value={`google.com`} isLink={true} />
-              </div>
-
-
-              {/* notes */}
-              <div className='mt-8'>
-                <ItemField label={`Notes`} value={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vel obcaecati culpa nostrum temporibus cumque? Iusto sint eaque voluptatem tempora, repellendus incidunt, libero fugiat voluptatum magni, nostrum mollitia maxime quis!`} />
-              </div>
-
-              <div className='mt-8 flex items-center'>
-                <i className='pi pi-history mr-1 text-xs text-slate-600' style={{ fontWeight: "800" }}></i>
-                <p className='item-value'>Last edited: Wed Nov 27, 2024</p>
               </div>
 
             </div>
-
           </div>
         </div>
       </div>
