@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 export interface ISubscriptionSchema {
   emoji: string;
@@ -76,6 +76,6 @@ const SubscriptionSchema = new Schema<ISubscriptionSchema>({
   }
 });
 
-const SubscriptionModel = model("subscriptions", SubscriptionSchema);
+const SubscriptionModel = mongoose.models.subscriptions || model("subscriptions", SubscriptionSchema);
 
 export default SubscriptionModel;
