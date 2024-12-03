@@ -13,7 +13,6 @@ import Picker from '@emoji-mart/react';
 const Form = ({ formData, setFormData }: any) => {
 
   const emojiOverlayRef = useRef(null);
-  const [emoji, setEmoji] = useState("😃");
   const [isChooseEmoji, setIsChooseEmoji] = useState(false);
 
   useClickOutside(emojiOverlayRef, () => {
@@ -21,7 +20,7 @@ const Form = ({ formData, setFormData }: any) => {
   })
 
   const handleEmojiSelect = (emoji: any) => {
-    setEmoji(emoji.native);
+    setFormData({ ...formData, emoji: emoji.native });
     setIsChooseEmoji(false);
   };
 
@@ -45,7 +44,7 @@ const Form = ({ formData, setFormData }: any) => {
 
               <input
                 type="text"
-                value={emoji}
+                value={formData.emoji}
                 readOnly
                 className='emoji-input-field'
                 onClick={() => setIsChooseEmoji(!isChooseEmoji)}

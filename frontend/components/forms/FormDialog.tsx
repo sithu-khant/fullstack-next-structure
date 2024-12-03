@@ -6,6 +6,7 @@ import Form from './Form';
 import { Subscription } from '@/constants/types';
 
 const defaultFormData: Subscription = {
+  emoji: "😃",
   name: "",
   provider: "",
   type: "",
@@ -28,7 +29,11 @@ const FormDialog = ({ clickForm, setClickForm }: any) => {
   const handleSave = (e: any) => {
     e.preventDefault();
 
+
     console.log(formData);
+
+    setFormData(defaultFormData);
+    setClickForm(false);
   }
 
   const footerButton = () => {

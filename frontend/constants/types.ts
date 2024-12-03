@@ -1,4 +1,5 @@
 export interface Subscription {
+  emoji: string;
   name: string;
   provider: string;
   type: string;
