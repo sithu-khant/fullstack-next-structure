@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "hono": "^4.6.11",
+    "mongodb": "^6.11.0",
     "mongoose": "^8.8.3"
   },
   "devDependencies": {
