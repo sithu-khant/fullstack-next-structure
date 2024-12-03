@@ -11,6 +11,7 @@
   * (12.3.02) - Initialized emoji picker.
   * (12.3.03) - Styled emoji picker.
   * (12.3.04) - Added emoji to the form type.
+  * (12.3.05) - Started writing backend. Created `subscription-model`.
 * Mon Dec 2, 2024
   * (12.2.01) - Styled form input fields.
   * (12.2.02) - Item screen size.
