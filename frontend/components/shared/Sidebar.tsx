@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useClickOutside } from 'primereact/hooks';
 import { useIntersectionObserver } from 'primereact/hooks';
@@ -11,12 +11,24 @@ import FormDialog from '../forms/FormDialog';
 
 const Sidebar = () => {
 
+  const [items, setItems] = useState([]);
   const hrRef = useRef(null);
   const hrVisible = useIntersectionObserver(hrRef);
   const searchRef = useRef(null);
   const [isSearching, setIsSearching] = useState(false);
   const [filteredText, setFilteredText] = useState("");
   const [clickForm, setClickForm] = useState(true);
+
+  useEffect(() => {
+    fetch(`${process.env.API_URI}`, {
+      cache: "no-store"
+    })
+      .then(res => res.json())
+      .then(res => setItems(res))
+      .catch(err => console.log("Cannot get items"));
+  }, []);
+
+  console.log(items);
 
   const handleTrash = () => { };
 

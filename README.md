@@ -16,6 +16,7 @@
   * (12.3.07) - Connected with MongoDB Atlas.
   * (12.3.08) - Created basic CURD method.
   * (12.3.09) - Added default collection or new collection for db.
+  * (12.3.10) - Trying to link backend with frontend.
 * Mon Dec 2, 2024
   * (12.2.01) - Styled form input fields.
   * (12.2.02) - Item screen size.
