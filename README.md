@@ -14,6 +14,7 @@
   * (12.3.05) - Started writing backend. Created `subscription-model`.
   * (12.3.06) - Committed for safety.
   * (12.3.07) - Connected with MongoDB Atlas.
+  * (12.3.08) - Created basic CURD method.
 * Mon Dec 2, 2024
   * (12.2.01) - Styled form input fields.
   * (12.2.02) - Item screen size.
