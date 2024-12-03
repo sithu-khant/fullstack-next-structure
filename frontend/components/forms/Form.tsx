@@ -41,31 +41,30 @@ const Form = ({ formData, setFormData }: any) => {
           <div>
             <label htmlFor={`name`} className='form-label'>Name</label>
 
-            <div>
+            <div className='flex'>
 
               <input
                 type="text"
                 value={emoji}
                 readOnly
-                className='bg-input-field-background emoji-input-field rounded focus:outline-none w-[28px] h-[28px] flex items-center text-center cursor-pointer'
+                className='emoji-input-field'
                 onClick={() => setIsChooseEmoji(!isChooseEmoji)}
               />
-
-              <div ref={emojiOverlayRef} className={`${isChooseEmoji ? "block" : "hidden"} absolute z-10`}>
-                <Picker
-                  data={data}
-                  onEmojiSelect={handleEmojiSelect}
-                  theme="light"
-                  previewPosition="none"
-                  maxFrequentRows="0"
-                  className="z-10"
-                />
-              </div>
-
               <input
                 id={`name`}
                 className='input-field'
                 onChange={(e) => handleInputChange(e, "name")}
+              />
+            </div>
+
+            <div ref={emojiOverlayRef} className={`${isChooseEmoji ? "block" : "hidden"} absolute z-10`}>
+              <Picker
+                data={data}
+                onEmojiSelect={handleEmojiSelect}
+                theme="light"
+                previewPosition="none"
+                maxFrequentRows="0"
+                className="z-10"
               />
             </div>
           </div>

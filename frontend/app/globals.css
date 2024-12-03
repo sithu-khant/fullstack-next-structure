@@ -101,6 +101,11 @@
     @apply scrollbar scrollbar-thumb-input-field-background scrollbar-track-transparent;
   }
 
+  /* Emoji picker */
+  .emoji-input-field {
+    @apply bg-input-field-background rounded-lg mr-2 focus:outline-none w-[40px] h-[40px] flex items-center text-center text-xl cursor-default;
+  }
+
   /* Sidebar */
   .new-item-button {
     @apply flex items-center bg-primary-color hover:bg-secondary-color text-input-field-background mr-1 px-3 py-2 cursor-default rounded-lg selection:bg-transparent;
