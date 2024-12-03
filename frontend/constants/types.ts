@@ -11,6 +11,5 @@ export interface Subscription {
   cost: number;
   currency: string;
   website: string;
-  category: string;
   notes?: string;
 }
