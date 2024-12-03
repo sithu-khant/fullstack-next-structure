@@ -1,4 +1,9 @@
-import { Hono } from 'hono'
+import { Hono } from 'hono';
+import { poweredBy } from "hono/powered-by";
+import { logger } from "hono/logger";
+
+import dbConnect from './db/connect';
+import SubscriptionModel from './db/subscription-model';
 
 const app = new Hono()
 
