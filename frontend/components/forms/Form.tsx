@@ -1,13 +1,29 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { InputSwitch } from "primereact/inputswitch";
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 
 import { billingCycles, currencyCodes, paymentMethods, subscriptionTypes } from '@/constants';
+import { useClickOutside } from 'primereact/hooks';
+import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
 
 const Form = ({ formData, setFormData }: any) => {
+
+  const emojiOverlayRef = useRef(null);
+  const [emoji, setEmoji] = useState("😃");
+  const [isChooseEmoji, setIsChooseEmoji] = useState(false);
+
+  useClickOutside(emojiOverlayRef, () => {
+    setIsChooseEmoji(false);
+  })
+
+  const handleEmojiSelect = (emoji: any) => {
+    setEmoji(emoji.native);
+    setIsChooseEmoji(false);
+  };
 
   const handleInputChange = (e: any, field: string) => {
     e.preventDefault();
@@ -24,11 +40,34 @@ const Form = ({ formData, setFormData }: any) => {
           {/* name */}
           <div>
             <label htmlFor={`name`} className='form-label'>Name</label>
-            <input
-              id={`name`}
-              className='input-field'
-              onChange={(e) => handleInputChange(e, "name")}
-            />
+
+            <div>
+
+              <input
+                type="text"
+                value={emoji}
+                readOnly
+                className='bg-input-field-background emoji-input-field rounded focus:outline-none w-[28px] h-[28px] flex items-center text-center cursor-pointer'
+                onClick={() => setIsChooseEmoji(!isChooseEmoji)}
+              />
+
+              <div ref={emojiOverlayRef} className={`${isChooseEmoji ? "block" : "hidden"} absolute z-10`}>
+                <Picker
+                  data={data}
+                  onEmojiSelect={handleEmojiSelect}
+                  theme="light"
+                  previewPosition="none"
+                  maxFrequentRows="0"
+                  className="z-10"
+                />
+              </div>
+
+              <input
+                id={`name`}
+                className='input-field'
+                onChange={(e) => handleInputChange(e, "name")}
+              />
+            </div>
           </div>
 
           <div className='form-fields-container'>

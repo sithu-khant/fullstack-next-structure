@@ -8,6 +8,7 @@
 
 * Tue Dec 3, 2024
   * (12.3.01) - Removed category input from form type.
+  * (12.3.02) - Initialized emoji picker.
 * Mon Dec 2, 2024
   * (12.2.01) - Styled form input fields.
   * (12.2.02) - Item screen size.

@@ -18,7 +18,6 @@ const defaultFormData: Subscription = {
   cost: 0,
   currency: "",
   website: "",
-  category: "",
   notes: "",
 };
 

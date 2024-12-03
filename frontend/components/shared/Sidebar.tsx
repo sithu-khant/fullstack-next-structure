@@ -16,7 +16,7 @@ const Sidebar = () => {
   const searchRef = useRef(null);
   const [isSearching, setIsSearching] = useState(false);
   const [filteredText, setFilteredText] = useState("");
-  const [clickForm, setClickForm] = useState(false);
+  const [clickForm, setClickForm] = useState(true);
 
   const handleTrash = () => { };
 
