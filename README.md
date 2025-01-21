@@ -198,6 +198,9 @@ src/
   │   │   ├── db-constants.ts  # Constants for database-related operations
   │   │   └── app-constants.ts # General app constants (e.g., statuses, roles)
   ├── docs/               # Documentation folder
+  ├── utils/              # Utility files like date formatting and others
+  │   ├── format-date.ts  # Utility to format dates
+  │   └── other-utils.ts  # Additional utility functions
   └── TODO                # To-Do list of upcoming tasks, features, and improvements
 ```
 
@@ -206,4 +209,5 @@ src/
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
-  - (1.21.02) - Adde installations.
+  - (1.21.02) - Added installations.
+  - (1.21.03) - Added utils folder to the folder structure.
