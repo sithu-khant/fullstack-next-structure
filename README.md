@@ -1,5 +1,8 @@
 # fullstack-next-structure
 
+![GitHub Repo stars](https://img.shields.io/github/stars/sithu-khant/fullstack-next-structure)
+![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/_sithu_khant)
+
 **Note:** This is my current tech stack and folder structure. Things may change overtime.
 
 ## Tech stack
@@ -9,23 +12,81 @@
   - **Framework:** Next.js with the `app/` directory (inside the `src/` folder).
   - **Styling:** DaisyUI, TailwindCSS.
   - **State Management:** Zustand.
-  - **Forms:** React Hook Form
+  - **Forms:** React Hook Form.
   - **Icons:** Luide.
   - **Utility Libraries:** clsx, tailwind-merge.
   - **Date Utilities:** date-fns.
 
 - **Backend**
 
-  - **Framework:** Hono
+  - **Framework:** Hono.
   - **tRPC:** For type-safe APIs.
   - **ORM:** Drizzle ORM.
-  - **Database:** Cloudflare D1
-  - **Authentication:** Better-auth with D1
-  - **Real-Time State Management:** Cloudflare Durable Objects
+  - **Database:** Cloudflare D1.
+  - **Authentication:** Better-auth with D1.
+  - **Real-Time State Management:** Cloudflare Durable Objects.
 
 - **API and Query Management:**
   - **API Calls:** React Query (@tanstack/react-query).
-  - **Validation:** Zod, @hono/zod-validator
+  - **Validation:** Zod, @hono/zod-validator.
+
+## Installations
+
+**Frontend**
+
+```bash
+# Install Next.js (with `app/` directory)
+bun create next@latest --ts .
+
+# Styling
+bun add tailwindcss postcss autoprefixer daisyui
+
+# State Management
+bun add zustand
+
+# Forms
+bun add react-hook-form @hookform/resolvers
+
+# Icons
+bun add lucide-react
+
+# Utility Libraries
+bun add clsx tailwind-merge
+
+# Date Utilities
+bun add date-fns
+```
+
+**Backend**
+
+```bash
+# Framework
+bun add hono
+
+# tRPC
+bun add @trpc/server @trpc/client @trpc/react-query
+
+# ORM
+bun add drizzle-orm drizzle-kit
+
+# Database (Cloudflare D1)
+# No package needed for D1, just use the Cloudflare API and Drizzle ORM
+
+# Authentication
+bun add better-auth
+
+# Real-Time State Management (Cloudflare Durable Objects)
+bun add @cloudflare/workers-types
+
+# API and Query Management
+bun add @tanstack/react-query
+
+# Validation
+bun add zod @hono/zod-validator
+
+# Deploying Cloudflare Workers (use wrangler CLI for deployment)
+bun add wrangler
+```
 
 ## Project structure
 
@@ -145,3 +206,4 @@ src/
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
+  - (1.21.02) - Adde installations.
