@@ -3,39 +3,44 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/sithu-khant/fullstack-next-structure)
 ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/_sithu_khant)
 
-**Note:** This is my current tech stack and folder structure. Things may change overtime.
+**Note:** This is my current tech stack and folder structure. Things may change over time.
 
-## Tech stack
+---
 
-- **Frontend**
+## Tech Stack
 
-  - **Framework:** Next.js with the `app/` directory (inside the `src/` folder).
-  - **Styling:** DaisyUI, TailwindCSS.
-  - **State Management:** Zustand.
-  - **Forms:** React Hook Form.
-  - **Icons:** Luide.
-  - **Utility Libraries:** clsx, tailwind-merge.
-  - **Date Utilities:** date-fns.
+### **Frontend**
 
-- **Backend**
+- **Framework:** Next.js with the `app/` directory (inside the `src/` folder).
+- **Styling:** DaisyUI, TailwindCSS.
+- **State Management:** Zustand.
+- **Forms:** React Hook Form.
+- **Icons:** Lucide.
+- **Utility Libraries:** clsx, tailwind-merge.
+- **Date Utilities:** date-fns.
+- **Email Templates:** react-email (by Resend).
 
-  - **Framework:** Hono.
-  - **tRPC:** For type-safe APIs.
-  - **ORM:** Drizzle ORM.
-  - **Database:** Cloudflare D1.
-  - **Authentication:** Better-auth with D1.
-  - **Real-Time State Management:** Cloudflare Durable Objects.
+### **Backend**
 
-- **API and Query Management:**
-  - **API Calls:** React Query (@tanstack/react-query).
-  - **Validation:** Zod, @hono/zod-validator.
+- **Framework:** Hono.
+- **tRPC:** For type-safe APIs.
+- **ORM:** Drizzle ORM.
+- **Database:** Cloudflare D1.
+- **Authentication:** Better-auth with D1.
+- **Real-Time State Management:** Cloudflare Durable Objects.
+- **Email Sending:** Resend.
+
+### **API and Query Management**
+
+- **API Calls:** React Query (@tanstack/react-query).
+- **Validation:** Zod, @hono/zod-validator.
 
 ## Installations
 
-**Frontend**
+### **Frontend**
 
 ```bash
-# Install Next.js (with `app/` directory)
+# Initialize Next.js (with `app/` directory)
 bun create next@latest --ts .
 
 # Styling
@@ -55,6 +60,9 @@ bun add clsx tailwind-merge
 
 # Date Utilities
 bun add date-fns
+
+# Email Templates
+bun add react-email @react-email/components
 ```
 
 **Backend**
@@ -70,13 +78,16 @@ bun add @trpc/server @trpc/client @trpc/react-query
 bun add drizzle-orm drizzle-kit
 
 # Database (Cloudflare D1)
-# No package needed for D1, just use the Cloudflare API and Drizzle ORM
+# No package needed for D1, just use the Cloudflare API with Drizzle ORM.
 
 # Authentication
 bun add better-auth
 
 # Real-Time State Management (Cloudflare Durable Objects)
 bun add @cloudflare/workers-types
+
+# Email Sending
+bun add resend
 
 # API and Query Management
 bun add @tanstack/react-query
@@ -90,7 +101,7 @@ bun add wrangler
 
 ## Project structure
 
-This is a example bookstore project structure.
+This is an example bookstore project structure:
 
 ```text
 src/
@@ -103,9 +114,9 @@ src/
   │   │   │   └── page.tsx  # Login page
   │   │   └── signup/       # Signup route
   │   │       └── page.tsx  # Signup page
-  │   ├── book/   # Routes for book management
+  │   ├── book/           # Routes for book management
   │   │   ├── layout.tsx  # Layout for book routes
-  │   │   ├── page.tsx    # book list route
+  │   │   ├── page.tsx    # Book list route
   │   │   └── create/     # Create book route
   │   │       └── page.tsx  # Create book page
   ├── features/           # Feature-specific logic
@@ -131,9 +142,10 @@ src/
   │   │   │   └── book-form.tsx  # Form to create/edit books
   │   │   ├── hooks/      # Custom hooks for book
   │   │   │   ├── use-get-books.ts      # Get books hook
-  │   │   │   └── use-create-book.ts    # Create book hook
-  │   │   │   └── update-book-by-id.ts  # Update book hook
-  │   │   ├── api/        # book API and helpers
+  │   │   │   ├── use-create-book.ts    # Create book hook
+  │   │   │   ├── use-update-book.ts    # Update book hook
+  │   │   │   └── use-delete-book.ts    # Delete book hook
+  │   │   ├── api/        # Book API and helpers
   │   │   │   ├── routes.ts     # API calls for books
   │   │   │   └── helpers.ts    # Utilities for book logic
   │   │   ├── types/      # Type definitions for book
@@ -164,8 +176,13 @@ src/
   │   │   ├── server.ts   # tRPC server configuration
   │   │   ├── router.ts   # tRPC router definitions
   │   │   └── context.ts  # tRPC context setup
-  │   ├── auth/           # better-auth configuration
+  │   ├── auth/           # Better-Auth configuration
   │   │   └── better-auth.ts  # Authentication config
+  │   ├── resend/         # Resend email service configuration
+  │   │   ├── client.ts   # Resend client setup
+  │   │   ├── templates/  # Email templates using react.email
+  │   │   │   ├── reset-password.tsx  # Password reset email template
+  │   │   │   └── welcome-email.tsx   # Welcome email template
   │   └── stripe/         # Stripe SDK setup
   │       └── stripe-client.ts  # Stripe client
   ├── server/             # Backend and server-side logic
@@ -173,13 +190,8 @@ src/
   │   │   ├── stripe/     # Stripe webhook handlers
   │   │   │   ├── handle-invoice.ts  # Stripe invoice webhook handler
   │   │   │   └── handle-book.ts  # Stripe book webhook handler
-  │   │   └── sendgrid/   # SendGrid email event handlers
-  │   │       └── handle-email-events.ts  # SendGrid email event handler
   │   └── workers/        # Cloudflare Workers logic
   │       └── durable-objects.ts  # Cloudflare Durable Objects setup
-  ├── state/              # Shared Zustand stores across the app
-  │   ├── user-store.ts   # Global user state
-  │   └── theme-store.ts  # Global theme state
   ├── styles/             # Global styles and configurations
   │   ├── globals.css     # Global CSS styles
   │   └── tailwind-config.js  # Tailwind CSS configuration
@@ -189,11 +201,11 @@ src/
   ├── db/                 # Database models, schemas, constants
   │   ├── models/         # Database models (tables, relationships, etc.)
   │   │   ├── user.ts     # User model
-  │   │   ├── book.ts     # book model
+  │   │   ├── book.ts     # Book model
   │   │   └── index.ts    # Export all models
   │   ├── schemas/        # Schemas for validation (e.g., using Zod)
   │   │   ├── user-schema.ts   # User validation schema
-  │   │   └── book-schema.ts  # book validation schema
+  │   │   └── book-schema.ts  # Book validation schema
   │   ├── constants/      # Constants for DB and app-wide usage
   │   │   ├── db-constants.ts  # Constants for database-related operations
   │   │   └── app-constants.ts # General app constants (e.g., statuses, roles)
@@ -206,6 +218,8 @@ src/
 
 ## Logs
 
+- Wed Jan 22, 2025
+  - (1.22.01) - Added Resend as the email provider instead of SendGrid.
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
