@@ -18,7 +18,7 @@
 - **Icons:** Lucide.
 - **Utility Libraries:** clsx, tailwind-merge.
 - **Date Utilities:** date-fns.
-- **Email Templates:** react-email (by Resend).
+- **Email Templates:** react-email (by SendGrid).
 
 ### **Backend**
 
@@ -28,7 +28,7 @@
 - **Database:** Cloudflare D1.
 - **Authentication:** Better-auth with D1.
 - **Real-Time State Management:** Cloudflare Durable Objects.
-- **Email Sending:** Resend.
+- **Email Sending:** SendGrid.
 
 ### **API and Query Management**
 
@@ -87,10 +87,7 @@ bun add better-auth
 bun add @cloudflare/workers-types
 
 # Email Sending
-bun add resend
-
-# API and Query Management
-bun add @tanstack/react-query
+bun add @sendgrid/mail
 
 # Validation
 bun add zod @hono/zod-validator
@@ -112,7 +109,7 @@ src/
   │   │   ├── layout.tsx  # Layout for auth routes (e.g., no header/footer)
   │   │   ├── login/      # Login route
   │   │   │   └── page.tsx  # Login page
-  │   │   └── signup/       # Signup route
+  │   │   └── signup/     # Signup route
   │   │       └── page.tsx  # Signup page
   │   ├── book/           # Routes for book management
   │   │   ├── layout.tsx  # Layout for book routes
@@ -124,15 +121,8 @@ src/
   │   │   ├── components/ # Auth-specific UI components
   │   │   │   ├── login-form.tsx   # Login form component
   │   │   │   └── signup-form.tsx  # Signup form component
-  │   │   ├── hooks/      # Custom hooks for auth
-  │   │   │   ├── use-login.ts     # Login API hook (React Query)
-  │   │   │   └── use-signup.ts    # Signup API hook (React Query)
-  │   │   ├── api/        # Authentication API and helpers
-  │   │   │   ├── routes.ts        # API calls for login/signup/logout
-  │   │   │   └── helpers/
-  │   │   │       ├── token-helper.ts       # Token handling utilities (e.g., generate, decode)
-  │   │   │       ├── password-helper.ts    # Password hashing & validation utilities
-  │   │   │       └── auth-error-helper.ts  # Error handling for auth-related issues
+  │   │   ├── api/        # Authentication API logic handled by tRPC routers
+  │   │   │   └── routes.ts        # tRPC routes for login/signup/logout
   │   │   ├── types/      # Type definitions for auth
   │   │   │   └── auth.d.ts  # Types for auth (e.g., user, token)
   │   │   └── store.ts    # Zustand store for authentication state
@@ -140,15 +130,9 @@ src/
   │   │   ├── components/ # Book-specific components
   │   │   │   ├── book-list.tsx  # List books UI
   │   │   │   └── book-form.tsx  # Form to create/edit books
-  │   │   ├── hooks/      # Custom hooks for book
-  │   │   │   ├── use-get-books.ts      # Get books hook
-  │   │   │   ├── use-create-book.ts    # Create book hook
-  │   │   │   ├── use-update-book.ts    # Update book hook
-  │   │   │   └── use-delete-book.ts    # Delete book hook
-  │   │   ├── api/        # Book API and helpers
-  │   │   │   ├── routes.ts     # API calls for books
-  │   │   │   └── helpers.ts    # Utilities for book logic
-  │   │   ├── types/      # Type definitions for book
+  │   │   ├── api/        # Book-related API logic handled by tRPC routers
+  │   │   │   └── routes.ts     # tRPC routes for books (get, create, update, delete)
+  │   │   ├── types/      # Type definitions for books
   │   │   │   └── book.d.ts     # Types for books
   │   │   └── store.ts    # Zustand store for book state
   │   └── email/          # Email account management feature (Zoho integration)
@@ -156,17 +140,8 @@ src/
   │       │   ├── email-create-form.tsx  # Form to create an email account
   │       │   ├── email-update-form.tsx  # Form to update an email account
   │       │   └── email-list.tsx         # Component to list all email accounts
-  │       ├── hooks/      # Custom hooks for Zoho email API
-  │       │   ├── use-create-email.ts    # Hook for creating an email account
-  │       │   ├── use-update-email.ts    # Hook for updating an email account
-  │       │   ├── use-delete-email.ts    # Hook for deleting an email account
-  │       │   └── use-get-emails.ts      # Hook for fetching email accounts
-  │       ├── api/        # Email-related API logic
-  │       │   ├── routes.ts              # API calls for Zoho mail integration
-  │       │   ├── helpers/               # Helper utilities for email logic
-  │       │   │   ├── zoho-client.ts     # Zoho client setup
-  │       │   │   ├── email-schema.ts    # Zod schema for email validations
-  │       │   │   └── error-handler.ts   # Error handling for email API
+  │       ├── api/        # Email-related API logic handled by tRPC routers
+  │       │   └── routes.ts              # tRPC routes for Zoho mail integration
   │       ├── types/      # Type definitions for Zoho email
   │       │   └── email.d.ts             # Types for email accounts
   │       └── store.ts    # Zustand store for managing email state
@@ -178,36 +153,34 @@ src/
   │       ├── header.tsx  # Global header
   │       └── footer.tsx  # Global footer
   ├── hooks/              # General-purpose hooks
-  │   ├── api-hooks/      # API-related hooks for CRUD operations
-  │   │   ├── use-create.ts       # Generic hook for creating items
-  │   │   ├── use-update-by-id.ts # Generic hook for updating items by ID
-  │   │   ├── use-delete-by-id.ts # Generic hook for deleting items by ID
-  │   │   ├── use-get-by-id.ts    # Generic hook for fetching item by ID
-  │   │   └── use-get-all.ts      # Generic hook for fetching all items
   │   ├── state/          # Zustand stores for shared state
   │   │   └── use-theme-store.ts  # Zustand store for managing themes
   │   └── utilities/      # Utility hooks
   │       ├── use-debounce.ts  # Hook for debouncing
   │       └── use-viewport.ts  # Hook to detect viewport size
   ├── lib/                # Configurations for external libraries/services
+  │   ├── session/             # Session-related configuration and middleware
+  │   │   ├── index.ts         # Export session-related functions and middleware
+  │   │   ├── middleware.ts    # Session middleware (e.g., session handling logic)
+  │   │   └── utils.ts         # Helper utilities for working with sessions
   │   ├── trpc/           # tRPC client and server configurations
   │   │   ├── client.ts   # tRPC client setup
   │   │   ├── server.ts   # tRPC server configuration
-  │   │   ├── router.ts   # tRPC router definitions
+  │   │   ├── router.ts   # tRPC router definitions (combine all routers here)
   │   │   └── context.ts  # tRPC context setup
   │   ├── auth/           # Better-Auth configuration
   │   │   └── better-auth.ts  # Authentication config
-  │   ├── resend/         # Resend email service configuration
-  │   │   ├── client.ts   # Resend client setup
+  │   ├── sendgrid/         # SendGrid email service configuration
+  │   │   ├── client.ts   # SendGrid client setup
   │   │   ├── templates/  # Email templates using react.email
   │   │   │   ├── reset-password.tsx  # Password reset email template
   │   │   │   └── welcome-email.tsx   # Welcome email template
   │   ├── zoho/           # Zoho API integration
   │   │   ├── client.ts           # Zoho API client setup
-  │   │   ├── routes.ts           # API endpoints for Zoho mail
+  │   │   ├── routes.ts           # tRPC API endpoints for Zoho mail
   │   │   └── constants.ts        # Zoho-specific constants (e.g., API URLs)
   │   └── stripe/         # Stripe SDK setup
-  │       └── stripe-client.ts  # Stripe client
+  │       └── client.ts   # Stripe client
   ├── server/             # Backend and server-side logic
   │   ├── webhooks/       # Webhook handlers
   │   │   ├── stripe/     # Stripe webhook handlers
@@ -242,8 +215,9 @@ src/
 ## Logs
 
 - Wed Jan 22, 2025
-  - (1.22.01) - Added Resend as the email provider instead of SendGrid.
+  - (1.22.01) - Added SendGrid as the email provider instead of SendGrid.
   - (1.22.02) - Added Hono email folder.
+  - (1.22.03) - Decided to use SendGrid again.
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
