@@ -151,6 +151,25 @@ src/
   │   │   ├── types/      # Type definitions for book
   │   │   │   └── book.d.ts     # Types for books
   │   │   └── store.ts    # Zustand store for book state
+  │   └── email/          # Email account management feature (Zoho integration)
+  │       ├── components/ # Email-specific UI components
+  │       │   ├── email-create-form.tsx  # Form to create an email account
+  │       │   ├── email-update-form.tsx  # Form to update an email account
+  │       │   └── email-list.tsx         # Component to list all email accounts
+  │       ├── hooks/      # Custom hooks for Zoho email API
+  │       │   ├── use-create-email.ts    # Hook for creating an email account
+  │       │   ├── use-update-email.ts    # Hook for updating an email account
+  │       │   ├── use-delete-email.ts    # Hook for deleting an email account
+  │       │   └── use-get-emails.ts      # Hook for fetching email accounts
+  │       ├── api/        # Email-related API logic
+  │       │   ├── routes.ts              # API calls for Zoho mail integration
+  │       │   ├── helpers/               # Helper utilities for email logic
+  │       │   │   ├── zoho-client.ts     # Zoho client setup
+  │       │   │   ├── email-schema.ts    # Zod schema for email validations
+  │       │   │   └── error-handler.ts   # Error handling for email API
+  │       ├── types/      # Type definitions for Zoho email
+  │       │   └── email.d.ts             # Types for email accounts
+  │       └── store.ts    # Zustand store for managing email state
   ├── components/         # Reusable, cross-feature components
   │   ├── ui/             # General-purpose UI components
   │   │   ├── button.tsx  # Button component
@@ -183,6 +202,10 @@ src/
   │   │   ├── templates/  # Email templates using react.email
   │   │   │   ├── reset-password.tsx  # Password reset email template
   │   │   │   └── welcome-email.tsx   # Welcome email template
+  │   ├── zoho/           # Zoho API integration
+  │   │   ├── client.ts           # Zoho API client setup
+  │   │   ├── routes.ts           # API endpoints for Zoho mail
+  │   │   └── constants.ts        # Zoho-specific constants (e.g., API URLs)
   │   └── stripe/         # Stripe SDK setup
   │       └── stripe-client.ts  # Stripe client
   ├── server/             # Backend and server-side logic
@@ -220,6 +243,7 @@ src/
 
 - Wed Jan 22, 2025
   - (1.22.01) - Added Resend as the email provider instead of SendGrid.
+  - (1.22.02) - Added Hono email folder.
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
