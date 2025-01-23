@@ -18,7 +18,7 @@
 - **Icons:** Lucide.
 - **Utility Libraries:** clsx, tailwind-merge.
 - **Date Utilities:** date-fns.
-- **Email Templates:** react-email (by SendGrid).
+- **Email Templates:** react-email (by Resend).
 
 ### **Backend**
 
@@ -26,9 +26,9 @@
 - **tRPC:** For type-safe APIs.
 - **ORM:** Drizzle ORM.
 - **Database:** Cloudflare D1.
-- **Authentication:** Better-auth with D1.
+- **Authentication:** Auth.js.
 - **Real-Time State Management:** Cloudflare Durable Objects.
-- **Email Sending:** SendGrid.
+- **Email Sending:** Resend.
 
 ### **API and Query Management**
 
@@ -81,13 +81,13 @@ bun add drizzle-orm drizzle-kit
 # No package needed for D1, just use the Cloudflare API with Drizzle ORM.
 
 # Authentication
-bun add better-auth
+bun add next-auth@beta
 
 # Real-Time State Management (Cloudflare Durable Objects)
 bun add @cloudflare/workers-types
 
 # Email Sending
-bun add @sendgrid/mail
+bun add resend
 
 # Validation
 bun add zod @hono/zod-validator
@@ -168,10 +168,10 @@ src/
   │   │   ├── server.ts   # tRPC server configuration
   │   │   ├── router.ts   # tRPC router definitions (combine all routers here)
   │   │   └── context.ts  # tRPC context setup
-  │   ├── auth/           # Better-Auth configuration
-  │   │   └── better-auth.ts  # Authentication config
-  │   ├── sendgrid/         # SendGrid email service configuration
-  │   │   ├── client.ts   # SendGrid client setup
+  │   ├── auth/           # Auth.js configuration
+  │   │   └── auth.ts     # Authentication config
+  │   ├── resend/         # Resend email service configuration
+  │   │   ├── client.ts   # Resend client setup
   │   │   ├── templates/  # Email templates using react.email
   │   │   │   ├── reset-password.tsx  # Password reset email template
   │   │   │   └── welcome-email.tsx   # Welcome email template
@@ -214,10 +214,11 @@ src/
 
 ## Logs
 
+- Thu Jan 23, 2025
+  - (1.23.01) - Resend and Auth.js.
 - Wed Jan 22, 2025
-  - (1.22.01) - Added SendGrid as the email provider instead of SendGrid.
+  - (1.22.01) - Added Resend as the email provider instead of SendGrid.
   - (1.22.02) - Added Hono email folder.
-  - (1.22.03) - Decided to use SendGrid again.
 - Tue Jan 21, 2025
   - (first-commit) - Made this repo public.
   - (1.21.01) - Added tech stack and project structure.
