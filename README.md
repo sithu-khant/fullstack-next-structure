@@ -11,7 +11,7 @@
 
 ### **Frontend**
 
-- **Framework:** Next.js with the `app/` directory (inside the `src/` folder).
+- **Framework:** Next.js (TypeScript) with the `app/` directory (inside the `src/` folder).
 - **Styling:** DaisyUI, TailwindCSS.
 - **State Management:** Zustand.
 - **Forms:** React Hook Form.
@@ -29,6 +29,7 @@
 - **Authentication:** Auth.js.
 - **Real-Time State Management:** Cloudflare Durable Objects.
 - **Email Sending:** Resend.
+- **File Storage:** Cloudflare R2.
 
 ### **API and Query Management**
 
@@ -93,7 +94,7 @@ bun add resend
 bun add zod @hono/zod-validator
 
 # Deploying Cloudflare Workers (use wrangler CLI for deployment)
-bun add wrangler
+bun add wrangler -D
 ```
 
 ## Project structure
@@ -216,6 +217,7 @@ src/
 
 - Thu Jan 23, 2025
   - (1.23.01) - Resend and Auth.js.
+  - (1.23.02) - Added Cloudflare R2 to the list.
 - Wed Jan 22, 2025
   - (1.22.01) - Added Resend as the email provider instead of SendGrid.
   - (1.22.02) - Added Hono email folder.
