@@ -1,6 +1,6 @@
-# fullstack-next-structure
+# ht-stack
 
-![GitHub Repo stars](https://img.shields.io/github/stars/sithu-khant/fullstack-next-structure)
+![GitHub Repo stars](https://img.shields.io/github/stars/sithu-khant/ht-stack)
 ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/_sithu_khant)
 
 **Note:** This is my current tech stack and folder structure. Things may change over time.
@@ -22,8 +22,7 @@
 
 ### **Backend**
 
-- **Framework:** Hono.
-- **tRPC:** For type-safe APIs.
+- **Framework:** tRPC.
 - **ORM:** Drizzle ORM.
 - **Database:** Cloudflare D1.
 - **Authentication:** Auth.js.
@@ -33,7 +32,7 @@
 
 ### **API and Query Management**
 
-- **API Calls:** React Query (@tanstack/react-query).
+- **API Calls:** tRPC.
 - **Validation:** Zod, @hono/zod-validator.
 
 ## Installations
@@ -69,14 +68,12 @@ bun add react-email @react-email/components
 **Backend**
 
 ```bash
-# Framework
-bun add hono
-
-# tRPC
-bun add @trpc/server @trpc/client @trpc/react-query
+# Framework - tRPC
+bun add @trpc/server@next @trpc/client@next @trpc/react-query@next @trpc/next@next @tanstack/react-query@latest
 
 # ORM
-bun add drizzle-orm drizzle-kit
+bun add drizzle-orm @libsql/client
+bun add -D drizzle-kit
 
 # Database (Cloudflare D1)
 # No package needed for D1, just use the Cloudflare API with Drizzle ORM.
@@ -91,7 +88,7 @@ bun add @cloudflare/workers-types
 bun add resend
 
 # Validation
-bun add zod @hono/zod-validator
+bun add zod
 
 # Deploying Cloudflare Workers (use wrangler CLI for deployment)
 bun add wrangler -D
@@ -122,8 +119,8 @@ src/
   │   │   ├── components/ # Auth-specific UI components
   │   │   │   ├── login-form.tsx   # Login form component
   │   │   │   └── signup-form.tsx  # Signup form component
-  │   │   ├── api/        # Authentication API logic handled by tRPC routers
-  │   │   │   └── routes.ts        # tRPC routes for login/signup/logout
+  │   │   ├── routers/    # Authentication API logic handled by tRPC routers
+  │   │   │   └── auth.ts          # tRPC routers for login/signup/logout
   │   │   ├── types/      # Type definitions for auth
   │   │   │   └── auth.d.ts  # Types for auth (e.g., user, token)
   │   │   └── store.ts    # Zustand store for authentication state
@@ -131,8 +128,8 @@ src/
   │   │   ├── components/ # Book-specific components
   │   │   │   ├── book-list.tsx  # List books UI
   │   │   │   └── book-form.tsx  # Form to create/edit books
-  │   │   ├── api/        # Book-related API logic handled by tRPC routers
-  │   │   │   └── routes.ts     # tRPC routes for books (get, create, update, delete)
+  │   │   ├── routers/    # Book-related API logic handled by tRPC routers
+  │   │   │   └── book.ts        # tRPC routes for books (get, create, update, delete)
   │   │   ├── types/      # Type definitions for books
   │   │   │   └── book.d.ts     # Types for books
   │   │   └── store.ts    # Zustand store for book state
@@ -141,8 +138,8 @@ src/
   │       │   ├── email-create-form.tsx  # Form to create an email account
   │       │   ├── email-update-form.tsx  # Form to update an email account
   │       │   └── email-list.tsx         # Component to list all email accounts
-  │       ├── api/        # Email-related API logic handled by tRPC routers
-  │       │   └── routes.ts              # tRPC routes for Zoho mail integration
+  │       ├── routers/    # Email-related API logic handled by tRPC routers
+  │       │   └── email.ts               # tRPC routes for Zoho mail integration
   │       ├── types/      # Type definitions for Zoho email
   │       │   └── email.d.ts             # Types for email accounts
   │       └── store.ts    # Zustand store for managing email state
@@ -196,10 +193,6 @@ src/
   │   ├── api.d.ts        # API request/response types
   │   └── common.d.ts     # Common types (e.g., pagination, error-response)
   ├── db/                 # Database models, schemas, constants
-  │   ├── models/         # Database models (tables, relationships, etc.)
-  │   │   ├── user.ts     # User model
-  │   │   ├── book.ts     # Book model
-  │   │   └── index.ts    # Export all models
   │   ├── schemas/        # Schemas for validation (e.g., using Zod)
   │   │   ├── user-schema.ts   # User validation schema
   │   │   └── book-schema.ts  # Book validation schema
@@ -215,6 +208,8 @@ src/
 
 ## Logs
 
+- Sun Jan 26, 2026
+  - (1.26.01) - Updated folder and file structure.
 - Thu Jan 23, 2025
   - (1.23.01) - Resend and Auth.js.
   - (1.23.02) - Added Cloudflare R2 to the list.
