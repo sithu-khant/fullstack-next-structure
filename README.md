@@ -33,7 +33,7 @@
 ### **API and Query Management**
 
 - **API Calls:** tRPC.
-- **Validation:** Zod, @hono/zod-validator.
+- **Validation:** Zod.
 
 ## Installations
 
@@ -99,6 +99,7 @@ bun add wrangler -D
 ```bash
 # ES Lint
 bun create @eslint/config@latest
+bun add eslint-plugin-import -D
 ```
 
 ## Project structure
@@ -215,6 +216,7 @@ src/
 
 - Mon Jan 27, 2025
   - (1.27.01) - Added eslint and improved folder structure.
+  - (1.27.02) - Added import eslinter.
 - Sun Jan 26, 2025
   - (1.26.01) - Updated folder and file structure.
 - Thu Jan 23, 2025
