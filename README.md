@@ -94,121 +94,128 @@ bun add zod
 bun add wrangler -D
 ```
 
+**Utils**
+
+```bash
+# ES Lint
+bun create @eslint/config@latest
+```
+
 ## Project structure
 
 This is an example bookstore project structure:
 
 ```text
 src/
-  ├── app/                # Next.js app directory for routing
-  │   ├── layout.tsx      # Root layout (e.g., global header/footer)
-  │   ├── page.tsx        # Root page (e.g., home or dashboard)
-  │   ├── auth/           # Routes for authentication
-  │   │   ├── layout.tsx  # Layout for auth routes (e.g., no header/footer)
-  │   │   ├── login/      # Login route
+  ├── app/                  # Next.js app directory for routing
+  │   ├── layout.tsx        # Root layout (e.g., global header/footer)
+  │   ├── page.tsx          # Root page (e.g., home or dashboard)
+  │   ├── auth/             # Routes for authentication
+  │   │   ├── layout.tsx    # Layout for auth routes (e.g., no header/footer)
+  │   │   ├── login/        # Login route
   │   │   │   └── page.tsx  # Login page
-  │   │   └── signup/     # Signup route
+  │   │   └── signup/       # Signup route
   │   │       └── page.tsx  # Signup page
-  │   ├── book/           # Routes for book management
-  │   │   ├── layout.tsx  # Layout for book routes
-  │   │   ├── page.tsx    # Book list route
-  │   │   └── create/     # Create book route
+  │   ├── book/             # Routes for book management
+  │   │   ├── layout.tsx    # Layout for book routes
+  │   │   ├── page.tsx      # Book list route
+  │   │   └── create/       # Create book route
   │   │       └── page.tsx  # Create book page
-  ├── features/           # Feature-specific logic
-  │   ├── auth/           # Authentication feature
-  │   │   ├── components/ # Auth-specific UI components
+  ├── features/             # Feature-specific logic
+  │   ├── auth/             # Authentication feature
+  │   │   ├── components/   # Auth-specific UI components
   │   │   │   ├── login-form.tsx   # Login form component
   │   │   │   └── signup-form.tsx  # Signup form component
-  │   │   ├── routers/    # Authentication API logic handled by tRPC routers
-  │   │   │   └── auth.ts          # tRPC routers for login/signup/logout
-  │   │   ├── types/      # Type definitions for auth
-  │   │   │   └── auth.d.ts  # Types for auth (e.g., user, token)
-  │   │   └── store.ts    # Zustand store for authentication state
-  │   ├── books/          # Book feature
-  │   │   ├── components/ # Book-specific components
+  │   │   ├── router.ts     # tRPC routers for login/signup/logout
+  │   │   ├── schemas.ts    # Schemas for books
+  │   │   ├── types.d.ts    # Type definitions for auth (e.g., user, token)
+  │   │   └── store.ts      # Zustand store for authentication state
+  │   ├── books/            # Book feature
+  │   │   ├── components/   # Book-specific components
   │   │   │   ├── book-list.tsx  # List books UI
   │   │   │   └── book-form.tsx  # Form to create/edit books
-  │   │   ├── routers/    # Book-related API logic handled by tRPC routers
-  │   │   │   └── book.ts        # tRPC routes for books (get, create, update, delete)
-  │   │   ├── types/      # Type definitions for books
-  │   │   │   └── book.d.ts     # Types for books
-  │   │   └── store.ts    # Zustand store for book state
-  │   └── email/          # Email account management feature (Zoho integration)
-  │       ├── components/ # Email-specific UI components
+  │   │   ├── router.ts     # tRPC routes for books (get, create, update, delete)
+  │   │   ├── schemas.ts    # Schemas for books
+  │   │   ├── types.d.ts    # Type definitions for books
+  │   │   └── store.ts      # Zustand store for book state
+  │   └── email/            # Email account management feature (Zoho integration)
+  │       ├── components/   # Email-specific UI components
   │       │   ├── email-create-form.tsx  # Form to create an email account
   │       │   ├── email-update-form.tsx  # Form to update an email account
   │       │   └── email-list.tsx         # Component to list all email accounts
-  │       ├── routers/    # Email-related API logic handled by tRPC routers
-  │       │   └── email.ts               # tRPC routes for Zoho mail integration
-  │       ├── types/      # Type definitions for Zoho email
-  │       │   └── email.d.ts             # Types for email accounts
-  │       └── store.ts    # Zustand store for managing email state
-  ├── components/         # Reusable, cross-feature components
-  │   ├── ui/             # General-purpose UI components
-  │   │   ├── button.tsx  # Button component
-  │   │   └── modal.tsx   # Modal component
-  │   └── layout/         # Layout components
-  │       ├── header.tsx  # Global header
-  │       └── footer.tsx  # Global footer
-  ├── hooks/              # General-purpose hooks
-  │   ├── state/          # Zustand stores for shared state
+  │       ├── routers/      # Email-related API logic handled by tRPC routers
+  │       │   └── email.ts       # tRPC routes for Zoho mail integration
+  │       ├── types/        # Type definitions for Zoho email
+  │       │   └── email.d.ts     # Types for email accounts
+  │       └── store.ts       # Zustand store for managing email state
+  ├── components/            # Reusable, cross-feature components
+  │   ├── ui/                # General-purpose UI components
+  │   │   ├── button.tsx     # Button component
+  │   │   └── modal.tsx      # Modal component
+  │   └── layout/            # Layout components
+  │       ├── header.tsx     # Global header
+  │       └── footer.tsx     # Global footer
+  ├── hooks/                 # General-purpose hooks
+  │   ├── state/             # Zustand stores for shared state
   │   │   └── use-theme-store.ts  # Zustand store for managing themes
-  │   └── utilities/      # Utility hooks
-  │       ├── use-debounce.ts  # Hook for debouncing
-  │       └── use-viewport.ts  # Hook to detect viewport size
-  ├── lib/                # Configurations for external libraries/services
-  │   ├── session/             # Session-related configuration and middleware
-  │   │   ├── index.ts         # Export session-related functions and middleware
-  │   │   ├── middleware.ts    # Session middleware (e.g., session handling logic)
-  │   │   └── utils.ts         # Helper utilities for working with sessions
-  │   ├── trpc/           # tRPC client and server configurations
-  │   │   ├── client.ts   # tRPC client setup
-  │   │   ├── server.ts   # tRPC server configuration
-  │   │   ├── router.ts   # tRPC router definitions (combine all routers here)
-  │   │   └── context.ts  # tRPC context setup
-  │   ├── auth/           # Auth.js configuration
-  │   │   └── auth.ts     # Authentication config
-  │   ├── resend/         # Resend email service configuration
-  │   │   ├── client.ts   # Resend client setup
-  │   │   ├── templates/  # Email templates using react.email
+  │   └── utilities/         # Utility hooks
+  │       ├── use-debounce.ts     # Hook for debouncing
+  │       └── use-viewport.ts     # Hook to detect viewport size
+  ├── lib/                   # Configurations for external libraries/services
+  │   ├── session/           # Session-related configuration and middleware
+  │   │   ├── index.ts       # Export session-related functions and middleware
+  │   │   ├── middleware.ts  # Session middleware (e.g., session handling logic)
+  │   │   └── utils.ts       # Helper utilities for working with sessions
+  │   ├── trpc/              # tRPC client and server configurations
+  │   │   ├── client.ts      # tRPC client setup
+  │   │   ├── server.ts      # tRPC server configuration
+  │   │   ├── router.ts      # tRPC router definitions (combine all routers here)
+  │   │   └── context.ts     # tRPC context setup
+  │   ├── auth/              # Auth.js configuration
+  │   │   └── auth.ts        # Authentication config
+  │   ├── resend/            # Resend email service configuration
+  │   │   ├── client.ts      # Resend client setup
+  │   │   ├── templates/     # Email templates using react.email
   │   │   │   ├── reset-password.tsx  # Password reset email template
   │   │   │   └── welcome-email.tsx   # Welcome email template
-  │   ├── zoho/           # Zoho API integration
-  │   │   ├── client.ts           # Zoho API client setup
-  │   │   ├── routes.ts           # tRPC API endpoints for Zoho mail
-  │   │   └── constants.ts        # Zoho-specific constants (e.g., API URLs)
-  │   └── stripe/         # Stripe SDK setup
-  │       └── client.ts   # Stripe client
-  ├── server/             # Backend and server-side logic
-  │   ├── webhooks/       # Webhook handlers
-  │   │   ├── stripe/     # Stripe webhook handlers
-  │   │   │   ├── handle-invoice.ts  # Stripe invoice webhook handler
-  │   │   │   └── handle-book.ts  # Stripe book webhook handler
-  │   └── workers/        # Cloudflare Workers logic
-  │       └── durable-objects.ts  # Cloudflare Durable Objects setup
-  ├── styles/             # Global styles and configurations
-  │   ├── globals.css     # Global CSS styles
-  │   └── tailwind-config.js  # Tailwind CSS configuration
-  ├── types/              # Shared TypeScript types across the app
-  │   ├── api.d.ts        # API request/response types
-  │   └── common.d.ts     # Common types (e.g., pagination, error-response)
-  ├── db/                 # Database models, schemas, constants
-  │   ├── schemas/        # Schemas for validation (e.g., using Zod)
-  │   │   ├── user-schema.ts   # User validation schema
-  │   │   └── book-schema.ts  # Book validation schema
-  │   ├── constants/      # Constants for DB and app-wide usage
+  │   ├── zoho/              # Zoho API integration
+  │   │   ├── client.ts      # Zoho API client setup
+  │   │   ├── routes.ts      # tRPC API endpoints for Zoho mail
+  │   │   └── constants.ts   # Zoho-specific constants (e.g., API URLs)
+  │   └── stripe/            # Stripe SDK setup
+  │       └── client.ts      # Stripe client
+  ├── server/                # Backend and server-side logic
+  │   ├── webhooks/          # Webhook handlers
+  │   │   ├── stripe/        # Stripe webhook handlers
+  │   │   │   ├── handle-invoice.ts   # Stripe invoice webhook handler
+  │   │   │   └── handle-book.ts      # Stripe book webhook handler
+  │   └── workers/           # Cloudflare Workers logic
+  │       └── durable-objects.ts      # Cloudflare Durable Objects setup
+  ├── styles/                # Global styles and configurations
+  │   ├── globals.css        # Global CSS styles
+  │   └── tailwind-config.js # Tailwind CSS configuration
+  ├── types/                 # Shared TypeScript types across the app
+  │   ├── api.d.ts           # API request/response types
+  │   └── common.d.ts        # Common types (e.g., pagination, error-response)
+  ├── db/                    # Database models, schemas, constants
+  │   ├── schemas/           # Schemas for validation (e.g., using Zod)
+  │   │   ├── user-schema.   # User validation schema
+  │   │   └── book-schema.ts # Book validation schema
+  │   ├── constants/         # Constants for DB and app-wide usage
   │   │   ├── db-constants.ts  # Constants for database-related operations
   │   │   └── app-constants.ts # General app constants (e.g., statuses, roles)
-  ├── docs/               # Documentation folder
-  ├── utils/              # Utility files like date formatting and others
-  │   ├── format-date.ts  # Utility to format dates
-  │   └── other-utils.ts  # Additional utility functions
-  └── TODO                # To-Do list of upcoming tasks, features, and improvements
+  ├── docs/                  # Documentation folder
+  ├── utils/                 # Utility files like date formatting and others
+  │   ├── format-date.ts     # Utility to format dates
+  │   └── other-utils.ts     # Additional utility functions
+  └── TODO                   # To-Do list of upcoming tasks, features, and improvements
 ```
 
 ## Logs
 
-- Sun Jan 26, 2026
+- Mon Jan 27, 2025
+  - (1.27.01) - Added eslint and improved folder structure.
+- Sun Jan 26, 2025
   - (1.26.01) - Updated folder and file structure.
 - Thu Jan 23, 2025
   - (1.23.01) - Resend and Auth.js.
