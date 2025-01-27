@@ -94,14 +94,6 @@ bun add zod
 bun add wrangler -D
 ```
 
-**Utils**
-
-```bash
-# ES Lint
-bun create @eslint/config@latest
-bun add eslint-plugin-import -D
-```
-
 ## Project structure
 
 This is an example bookstore project structure:
@@ -217,6 +209,7 @@ src/
 - Mon Jan 27, 2025
   - (1.27.01) - Added eslint and improved folder structure.
   - (1.27.02) - Added import eslinter.
+  - (1.27.03) - Removed eslint.
 - Sun Jan 26, 2025
   - (1.26.01) - Updated folder and file structure.
 - Thu Jan 23, 2025
